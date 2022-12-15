@@ -8,10 +8,10 @@ export default function PageNotFound() {
       <h1 className="pageNotFound__404">404</h1>
       <h2 className="pageNotFound__title">Page Not Found !</h2>
 
-      <Link to="/" className="pageNotFound__link">
-        Back to the
+      <Link to="/portfolio" className="pageNotFound__link">
+        Back to
         <br />
-        <span>Post Office</span>
+        <span>Home</span>
       </Link>
     </div>
   )

@@ -21,7 +21,7 @@ function App() {
             <Header />
             <main className="main">
               <Routes>
-                <Route exact path="/" element={<Home />} />
+                <Route exact path="/portfolio" element={<Home />} />
                 <Route path="/cv" element={<Cv />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/createPost" element={<CreateCv />} />
