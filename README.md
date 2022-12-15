@@ -1,12 +1,10 @@
 # Portfolio
 
-##### _Social-network of the Groupomania company_
-
 ## **Installation** :
 
 **Back-end**
 
-- Open a shell in Groupomania folder
+- Open a shell in Portfolio folder
 - Jump in backend folder with `cd backend`
 - Download backend required dependencies with `npm install`
 - Start the API with `nodemon` command
@@ -14,7 +12,7 @@
 
 **Front-end**
 
-- Open another shell in Groupomania folder
+- Open another shell in Portfolio folder
 - Jump in frontend folder with `cd frontend`
 - Download frontend dependencies with `npm install`
 - Start the application with `npm start`
