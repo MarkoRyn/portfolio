@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.38c5d118.css",
+    "main.js": "/portfolio/static/js/main.a7ab8251.js",
+    "static/media/DancingScript-Regular.ttf": "/portfolio/static/media/DancingScript-Regular.5bfc0dcc0c0ff5a2832e.ttf",
+    "static/media/Lato-Regular.ttf": "/portfolio/static/media/Lato-Regular.9d883d540ee2b4de8024.ttf",
+    "static/media/Lato-LightItalic.ttf": "/portfolio/static/media/Lato-LightItalic.4310bbed01b37dfcee98.ttf",
+    "static/media/old-postcard-800x533.jpg": "/portfolio/static/media/old-postcard-800x533.1e38d4d64c28a643c0a0.jpg",
+    "index.html": "/portfolio/index.html",
+    "main.38c5d118.css.map": "/portfolio/static/css/main.38c5d118.css.map",
+    "main.a7ab8251.js.map": "/portfolio/static/js/main.a7ab8251.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38c5d118.css",
+    "static/js/main.a7ab8251.js"
+  ]
+}
