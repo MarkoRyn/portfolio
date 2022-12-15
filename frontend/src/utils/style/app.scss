@@ -8,8 +8,9 @@
 }
 
 body {
-  font-family: 'Lato-Italic';
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   list-style: none;
+  text-decoration: none;
 }
 
 textarea {
@@ -30,8 +31,12 @@ button {
 
 .main {
   background-color: black;
-  position: relative;
+  position: absolute;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+div:visited {
+  text-decoration: none;
 }
