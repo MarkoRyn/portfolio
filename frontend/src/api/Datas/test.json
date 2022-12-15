@@ -1,0 +1,21 @@
+{
+    "_id": {
+      "$oid": "63691e163e87752578a6aed9"
+    },
+    "posterId": "63691c653e87752578a6aec0",
+    "message": "Women In Trucking Association Honors Stericycle for its Commitment to Advancing the Employment of Women in Trucking \r\n\r\nBANNOCKBURN, Ill., Nov. 7, 2022 /PRNewswire/ -- Stericycle, Inc. (Nasdaq: SRCL), a leading provider of regulated medical waste management, secure information destruction and patient engagement solutions, announced today it was honored as a \"Top Company for Women to Work for in Transportation\" for the second year in a row by the Women In Trucking Association. This annual award recognizes companies that exemplify a dedication to female employment and strive to create inclusive work environments for women in the trucking industry.",
+    "image": "http://localhost:4200/images/Stericycle_Logo.jpg1667833366320.jpg",
+    "likes": 9,
+    
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1660921366322"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1667895563393"
+      }
+    },
+    "__v": 0
+  }

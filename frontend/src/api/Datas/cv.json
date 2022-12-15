@@ -1,0 +1,77 @@
+[{
+  "experience":[
+   {
+    "title": "Technicien de laboratoire",
+    "company": "Lafarge",
+    "location": "St Quentin Fallavier (38)",
+    "employmentType": "CDI",
+    "startDate": "April 2007",
+    "endDate": "December 2021"
+   },
+   {
+    "title": "Agent logistique",
+    "company": "Divers entreprises",
+    "location": "Isère (38) - Rhône (69)",
+    "employmentType": "Interim \/ CDD",
+    "startDate": "September 1998",
+    "endDate": "March 2007"
+   }
+  ],
+  "education":[
+   {
+    "title": "Développeur web",
+    "school": "Openclassrooms",
+    "degree": "Titre professionnel niveau 5 (BAC+2)",
+    "location": "à distance",
+    "startDate": "March 2022",
+    "endDate": "November 2022"
+   },
+   {
+    "title": "Tailleur de pierre",
+    "school": "Atelier des Bons Oeuvriers",
+    "degree": "niveau CAP",
+    "location": "St Antoine l'Abbaye (38)",
+    "startDate": "December 2016",
+    "endDate": "June 2017"
+   },
+   {
+    "title": "Webdesign",
+    "school": "AFIP",
+    "degree": "Attestation de formation",
+    "location": "Lyon (69)",
+    "startDate": "September 2003",
+    "endDate": "December 2003"
+   },
+   {
+    "title": "DEUG Science de la vie et de la terre",
+    "school": "Université Claude Bernard Lyon 1",
+    "degree": "Bac +2",
+    "location": "Lyon (69)",
+    "startDate": "September 1995",
+    "endDate": "June 1998"
+   },
+   {
+    "title": "Baccalauréat D",
+    "school": "Lycée Léonard de Vinci",
+    "degree": "Bac",
+    "location": "Villefontaine (38)",
+    "endDate": "June 1994"
+   }
+  ],
+  "skill":[
+   {
+    "ide": ["Visual Code Studio"],
+    "frontend": ["HTML 5", "CSS 3", "Sass", "Javascript", "React.js 18"],
+    "backend": ["Node.js", "Express.js 4", "MongoDB 6"],
+    "software": ["Word", "Excel", "Sheets", "Docs", "Slides", "Photoshop", "Illustrator", "Sketchup"]
+   }
+  ],
+  "softSkill":[ "Travail en équipe", "Autonomie", "Capacité d'adaptation", "Rigueur", "Curiosité", "Persévérence", "Réactivité"
+  ],
+  "language":[
+   {
+    "Français": 3,
+    "Anglais": 2
+   }
+  ]
+  }]

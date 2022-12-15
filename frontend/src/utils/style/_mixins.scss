@@ -1,0 +1,69 @@
+@mixin confirmBox {
+  z-index: 10;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: url('../../../public/images/old-postcard-800x533.jpg');
+  box-shadow: $colour-tertiary 0px 0px 20px;
+  width: 300px;
+  aspect-ratio: 1.5 / 1;
+  &__title {
+    font-size: 30px;
+    text-align: center;
+    padding: 0 20px;
+  }
+  &__btn {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+  }
+  & svg {
+    width: 40px;
+    height: 40px;
+  }
+  & #cancelSvg:hover {
+    fill: rgba($colour-primary, 0.8);
+    scale: 1.2;
+  }
+  & #confirmSvg:hover {
+    fill: rgba(green, 0.8);
+    scale: 1.2;
+  }
+}
+
+@mixin layoutKF {
+  animation: layout 0.3s ease-in-out;
+  @keyframes layout {
+    from {
+      background-color: rgba($colour-tertiary, 0);
+    }
+    to {
+      background-color: rgba($colour-tertiary, 0.8);
+    }
+  }
+}
+
+@mixin confirmBoxKF {
+  animation: 0.2s confirmBox 0.2s ease-out forwards;
+  @keyframes confirmBox {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin comment-textField {
+  width: 90%;
+  padding: 0 25px 0 15px;
+  @media (min-width: 768px) {
+    padding: 0 0 0 20px;
+  }
+}

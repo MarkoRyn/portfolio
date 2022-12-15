@@ -1,0 +1,101 @@
+@import './variables';
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  font-size: $font-size-small;
+  background-image: url('../../../public/images/old-postcard-800x533.jpg');
+  background-size: auto;
+  margin: 25px auto;
+  padding: 10px;
+  width: 90vw;
+  aspect-ratio: 1.5 / 1;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+  &__header {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    & div {
+      display: flex;
+      flex-direction: column;
+    }
+    &__picture {
+      position: relative;
+      width: 30%;
+      // ratio 42% / 50%
+      &__image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 58.8%;
+        aspect-ratio: 1/1.47;
+        object-fit: cover;
+        z-index: 5;
+      }
+      &__border {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        z-index: 6;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+      }
+      &__choice {
+        position: absolute;
+        bottom: -10%;
+        left: 0;
+        z-index: 5;
+        scale: 0.8;
+        @media (min-width: 480px) {
+          bottom: 0;
+          left: 20%;
+          scale: 1;
+        }
+      }
+    }
+    &__infos {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 70%;
+      & > * {
+        margin-bottom: 1%;
+      }
+      &__name {
+        font-size: $font-size-xlarge;
+        font-weight: bold;
+      }
+      &__email {
+        font-size: $font-size-large;
+      }
+      & input {
+        padding: 1%;
+      }
+    }
+  }
+  &__content {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    &__modify {
+      position: absolute;
+      display: flex;
+      justify-content: space-evenly;
+      right: 0;
+      bottom: 0;
+      width: 20%;
+      & svg {
+        width: 60%;
+        @media (min-width: 768px) {
+          width: 40%;
+        }
+      }
+      & svg:hover {
+        fill: $colour-primary;
+      }
+    }
+  }
+}

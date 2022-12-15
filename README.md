@@ -1,4 +1,4 @@
-# Groupomania
+# Portfolio
 
 ##### _Social-network of the Groupomania company_
 

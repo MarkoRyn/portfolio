@@ -1,0 +1,176 @@
+@mixin floatingElement {
+  position: absolute;
+  white-space: nowrap;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 10vw;
+  color: white;
+  text-shadow: 0px 0px 10px black;
+  animation: var(--animation);
+  transition: all 0.5s ease-out;
+  opacity: 1;
+  z-index: 0;
+}
+
+.screen {
+  position: relative;
+}
+
+.cv {
+  &__skill {
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    &__front {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      position: relative;
+      & > * {
+        @include floatingElement();
+      }
+      & > *:hover {
+        color: white;
+        cursor: pointer;
+        animation-play-state: paused;
+        font-size: 12vw;
+      }
+    }
+    &__back {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      position: relative;
+      & > * {
+        @include floatingElement();
+      }
+      & > *:hover {
+        color: white;
+        cursor: pointer;
+        animation-play-state: paused;
+        font-size: 12vw;
+      }
+    }
+    &__ide {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      position: relative;
+      & > * {
+        @include floatingElement();
+      }
+      & > *:hover {
+        color: white;
+        cursor: pointer;
+        animation-play-state: paused;
+        font-size: 12vw;
+      }
+    }
+    &__software {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      position: relative;
+      & > * {
+        @include floatingElement();
+      }
+      & > *:hover {
+        color: white;
+        cursor: pointer;
+        animation-play-state: paused;
+        font-size: 12vw;
+      }
+    }
+  }
+}
+
+.randomBtn {
+  position: absolute;
+  width: 100px;
+  bottom: 20%;
+}
+
+.offsetBtn {
+  position: absolute;
+  width: 100px;
+  bottom: 15%;
+}
+
+@keyframes floating {
+  0% {
+    top: var(--y0);
+    left: var(--x0);
+    transform: var(--z0);
+    filter: var(--brightness0);
+    z-index: var(--zIndex0);
+  }
+  10% {
+    top: var(--y1);
+    left: var(--x1);
+    transform: var(--z1);
+    filter: var(--brightness1);
+    z-index: var(--zIndex1);
+  }
+  20% {
+    top: var(--y2);
+    left: var(--x2);
+    transform: var(--z2);
+    filter: var(--brightness2);
+    z-index: var(--zIndex2);
+  }
+  30% {
+    top: var(--y3);
+    left: var(--x3);
+    transform: var(--z3);
+    filter: var(--brightness3);
+    z-index: var(--zIndex3);
+  }
+  40% {
+    top: var(--y4);
+    left: var(--x4);
+    transform: var(--z4);
+    filter: var(--brightness4);
+    z-index: var(--zIndex4);
+  }
+  50% {
+    top: var(--y5);
+    left: var(--x5);
+    transform: var(--z5);
+    filter: var(--brightness5);
+    z-index: var(--zIndex5);
+  }
+  60% {
+    top: var(--y6);
+    left: var(--x6);
+    transform: var(--z6);
+    filter: var(--brightness6);
+    z-index: var(--zIndex6);
+  }
+  70% {
+    top: var(--y7);
+    left: var(--x7);
+    transform: var(--z7);
+    filter: var(--brightness7);
+    z-index: var(--zIndex7);
+  }
+  80% {
+    top: var(--y8);
+    left: var(--x8);
+    transform: var(--z8);
+    filter: var(--brightness8);
+    z-index: var(--zIndex8);
+  }
+  90% {
+    top: var(--y9);
+    left: var(--x9);
+    transform: var(--z9);
+    filter: var(--brightness9);
+    z-index: var(--zIndex9);
+  }
+  100% {
+    top: var(--y0);
+    left: var(--x0);
+    transform: var(--z0);
+    filter: var(--brightness0);
+    z-index: var(--zIndex0);
+  }
+}

@@ -1,0 +1,171 @@
+@import '../../utils/style/variables';
+
+.login {
+  &__message {
+    color: $colour-secondary;
+    text-align: center;
+    padding: 10px;
+    & span {
+      color: $colour-primary;
+    }
+  }
+}
+
+.auth {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../../../public/images/old-postcard-800x533.jpg');
+  box-shadow: $colour-tertiary 0px 10px 20px;
+  width: 80vw;
+  aspect-ratio: 1.5 / 1;
+  max-width: 500px;
+  &__header {
+    display: flex;
+    width: 100%;
+    &__btn {
+      width: 50%;
+      aspect-ratio: 4/1;
+      border: 1px solid rgba($colour-tertiary, 0.75);
+      background-color: rgba($colour-tertiary, 0.3);
+      font-size: $font-size-xxsmall;
+      font-weight: bold;
+      color: rgba($colour-tertiary, 0.5);
+      transition: color 0.1s ease-in-out;
+      transition: box-shadow 0.1s ease-in-out;
+      box-shadow: 0px -5px 25px -10px $colour-tertiary inset;
+      @media (min-width: 768px) {
+        font-size: $font-size-xxsmall-fixed;
+      }
+    }
+    &__btn:hover {
+      color: rgba($colour-tertiary, 0.8);
+      background-color: rgba($colour-tertiary, 0.15);
+      font-size: $font-size-xsmall;
+      @media (min-width: 768px) {
+        font-size: $font-size-xsmall-fixed;
+      }
+    }
+    & > .activeBtn {
+      font-size: $font-size-small;
+      @media (min-width: 768px) {
+        font-size: $font-size-small-fixed;
+      }
+      border-bottom: 0;
+      background-color: rgba($colour-tertiary, 0);
+      color: $colour-tertiary;
+      box-shadow: none;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 90%;
+    border: 1px solid rgba($colour-tertiary, 0.75);
+    border-top: 0;
+    & button {
+      position: absolute;
+      top: 94%;
+      background-color: $colour-secondary;
+      font-size: $font-size-small;
+      font-weight: bold;
+      color: $colour-tertiary;
+      border: 2px solid rgba($colour-tertiary, 0.5);
+      box-shadow: $colour-tertiary 0px 15px 30px;
+      width: 25%;
+      aspect-ratio: 3/1;
+      transition: color 0.2s ease-in-out;
+      transition: box-shadow 0.4s ease-in-out;
+      @media (min-width: 768px) {
+        font-size: $font-size-small-fixed;
+      }
+    }
+    & button:hover {
+      color: rgb(0, 200, 0);
+      box-shadow: rgb(0, 200, 0) 0px 0px 60px;
+    }
+    & .errorBtn {
+      color: $colour-primary !important;
+      box-shadow: $colour-primary 0px 0px 60px !important;
+    }
+    &__login,
+    &__signUp {
+      width: 100%;
+      height: 100%;
+      padding-bottom: 3%;
+      font-size: $font-size-small;
+      @media (min-width: 768px) {
+        font-size: $font-size-small-fixed;
+      }
+      &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        &__fields {
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          flex-wrap: wrap;
+          width: 100%;
+          height: 100%;
+          &__field {
+            display: flex;
+            flex-direction: column;
+            padding: 1% 2%;
+            width: 50%;
+            @media (min-width: 480px) {
+              padding: 1% 4%;
+            }
+            & > label {
+              padding: 5px;
+              text-align: center;
+            }
+            & > input {
+              border: 1px solid rgba($colour-tertiary, 0.75);
+              aspect-ratio: 7/1;
+              box-shadow: $colour-tertiary 0px 1px 3px;
+              padding: 0 3%;
+              font-size: $font-size-xsmall;
+              @media (min-width: 768px) {
+                font-size: $font-size-xxsmall-fixed;
+              }
+            }
+          }
+          &__field:nth-child(3) {
+            width: 75%;
+            & > input {
+              aspect-ratio: 10.5/1;
+            }
+          }
+        }
+      }
+    }
+    &__login__form__fields__field {
+      padding: 2%;
+      width: 60%;
+    }
+    &__message {
+      position: absolute;
+      top: 115%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-size: $font-size-medium;
+      @media (min-width: 768px) {
+        font-size: $font-size-medium-fixed;
+      }
+      &__error {
+        color: $colour-primary;
+      }
+      &__validation {
+        color: greenyellow;
+      }
+    }
+  }
+}

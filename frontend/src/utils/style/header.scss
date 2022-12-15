@@ -1,0 +1,178 @@
+@import './variables';
+@import './mixins';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: 10px 10px 0 10px;
+  @media (min-width: 480px) {
+    flex-direction: row;
+  }
+  &__logo {
+    padding-left: 10%;
+    height: 50px;
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    @media (min-width: 480px) {
+      width: 40%;
+    }
+    & svg {
+      fill: rgba($colour-primary, 0.8);
+    }
+    & svg:hover {
+      fill: $colour-primary;
+      scale: 1.2;
+    }
+    &__postOffice {
+      fill: none;
+      & #postOfficeSvg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    &__createPost {
+      width: 40px;
+      height: 40px;
+    }
+    &__profile {
+      width: 22px;
+      height: 22px;
+    }
+    &__logout {
+      &__btn {
+        width: 30px;
+        height: 30px;
+      }
+      &__layout {
+        z-index: 9;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba($colour-tertiary, 0.8);
+        @include layoutKF;
+      }
+      &__confirmBox {
+        z-index: 10;
+        position: absolute;
+        top: 50vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-image: url('../../../public/images/old-postcard-800x533.jpg');
+        box-shadow: $colour-tertiary 0px 0px 20px;
+        width: 300px;
+        aspect-ratio: 1.5 / 1;
+        opacity: 0;
+        @include confirmBoxKF;
+        &__title {
+          font-size: 30px;
+        }
+        &__btn {
+          display: flex;
+          justify-content: space-evenly;
+          width: 50%;
+        }
+        & svg {
+          width: 40px;
+          height: 40px;
+          fill: black;
+        }
+        & #cancelSvg:hover {
+          fill: rgba($colour-primary, 0.8);
+          scale: 1.2;
+        }
+        & #confirmSvg:hover {
+          fill: rgba(green, 0.8);
+          scale: 1.2;
+        }
+      }
+    }
+  }
+}
+
+.header__logo {
+  width: 200px;
+}
+
+.scrollUp {
+  position: relative;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  animation: moveUp 0.4s ease-in-out;
+  .header__nav {
+    position: absolute;
+    justify-content: space-evenly;
+    right: 0;
+    width: 80%;
+    @media (min-width: 480px) {
+      width: 40%;
+    }
+    &__logout {
+      &__layout {
+        z-index: 9;
+        top: -100vh;
+        left: -200vh;
+        position: absolute;
+        width: 300vw;
+        height: 200vh;
+      }
+      &__confirmBox {
+        top: -50vh;
+        left: -10vw;
+      }
+    }
+  }
+  & .logoSvg {
+    &__title {
+      display: none;
+      @media (min-width: 480px) {
+        display: block;
+      }
+    }
+  }
+}
+
+.scrollDown {
+  animation: moveDown 0.4s ease-in-out;
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(5rem);
+  }
+  to {
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes moveDown {
+  from {
+    transform: translateY(-5rem);
+  }
+  to {
+    transform: translateY(0rem);
+  }
+}
+
+.logoSvg {
+  &__title {
+    fill: $colour-primary;
+  }
+  &__logo {
+    fill: $colour-secondary;
+  }
+}

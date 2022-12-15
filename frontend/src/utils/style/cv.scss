@@ -1,0 +1,30 @@
+@import './variables';
+@import './mixins';
+
+.cv {
+  &__experience {
+    &__title {
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      background-color: rgb(150, 150, 150);
+      width: 300px;
+      color: white;
+      margin: 5px;
+      padding: 10px;
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        &__title {
+          font-weight: bold;
+        }
+      }
+      &__content {
+        margin-top: 10px;
+        text-align: right;
+      }
+    }
+  }
+}
