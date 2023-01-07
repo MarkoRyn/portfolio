@@ -21,7 +21,7 @@
     text-decoration: none;
     padding: 5%;
     text-align: center;
-    color: rgba($colour-primary, 0.77);
+    color: rgba(red, 0.77);
     @media (min-width: 768px) {
       font-size: 25px;
     }
@@ -33,6 +33,6 @@
     }
   }
   &__link:hover {
-    color: $colour-primary;
+    color: red;
   }
 }

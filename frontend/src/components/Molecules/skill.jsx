@@ -1,9 +1,3 @@
-export const Skill = ({ children, className, index }) => {
-  return (
-    <>
-      <div className={className} key={index}>
-        {children}
-      </div>
-    </>
-  )
+export const Skill = ({ children, className }) => {
+  return <div className={className}>{children}</div>
 }

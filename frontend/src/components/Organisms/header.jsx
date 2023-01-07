@@ -6,7 +6,6 @@ import { useNavigate, Link } from 'react-router-dom'
 import UserService from '../../api/Services/UserServices'
 import { PortfolioContext } from '../../utils/contexts/portfolioContext'
 
-import Logout from './logout'
 import {} from '../Atoms/svg'
 
 export default function Header() {
@@ -57,22 +56,24 @@ export default function Header() {
   return (
     <>
       <header className={'header ' + scrollUp + scrollDown}>
-        <Link
-          style={{ textDecoration: 'none', color: 'white' }}
-          to="/portfolio"
-        >
+        <Link style={{ textDecoration: 'none', color: 'white' }} to="/">
           <div className="header__title" onClick={handleScrollTop}>
-            MARCEL RAYANE
+            Marcel Rayane
           </div>
         </Link>
-        <div className="header__nav">
-          {/* <Link style={{ textDecoration: 'none', color: 'white' }} to="/cv">
+        <Link style={{ textDecoration: 'none', color: 'white' }} to="/">
+          <div className="header__title" onClick={handleScrollTop}>
+            Développeur Web
+          </div>
+        </Link>
+        {/* <div className="header__nav">
+          <Link style={{ textDecoration: 'none', color: 'white' }} to="/cv">
             <div className="header__nav__cv">CURRICULUM VITAE</div>
-          </Link> */}
-          {/* <Link style={{textDecoration: 'none'}} to="/profile">
+          </Link>
+          <Link style={{textDecoration: 'none'}} to="/profile">
             <div className="header__nav__profile">PROFILE</div>
-          </Link> */}
-          {/* <Link style={{textDecoration: 'none'}} to="/login">
+          </Link>
+          <Link style={{textDecoration: 'none'}} to="/login">
             <div className="header__nav__login">LOGIN</div>
           </Link>
           <Logout
@@ -82,9 +83,8 @@ export default function Header() {
             onClick={() => setIsConfirm(true)}
             handleCancel={handleLogoutCancel}
             handleConfirm={handleLogoutConfirm}
-          /> */}
-          {!userId ? <></> : <></>}
-        </div>
+          />
+        </div> */}
       </header>
     </>
   )

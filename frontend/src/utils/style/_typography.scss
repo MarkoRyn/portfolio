@@ -1,15 +1,32 @@
 @font-face {
-  font-family: 'Lato-Regular';
-  src: url('./fonts/Lato/Lato-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Lato-Italic';
-  src: url('./fonts/Lato/Lato-LightItalic.ttf') format('truetype');
-}
-
-@font-face {
   font-family: 'Dancing-script';
   src: url('./fonts/Dancing-script/DancingScript-Regular.ttf')
     format('truetype');
+}
+
+@font-face {
+  font-family: 'Steampunk-flyer';
+  src: url('./fonts/steampunk-flyer/steampunk-flyer.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ironman-regular';
+  src: url('./fonts/iron-man-of-war-font/IronManOfWar-regular.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Ironman-black';
+  src: url('./fonts/iron-man-of-war-font/IronManOfWar-black.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'retro-gaming';
+  src: url('./fonts/retro-gaming/retro-gaming.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'retro-computer';
+  src: url('./fonts/retro-computer/retro-computer.ttf') format('truetype');
 }

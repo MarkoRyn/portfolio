@@ -1,98 +1,413 @@
-@mixin floatingElement {
+@import './variables';
+@import './mixins';
+
+.timeScroller {
+  --yearScrollY: 200px;
+}
+
+.timeScroller {
+  display: flex;
+  justify-content: center;
   position: absolute;
-  white-space: nowrap;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 10vw;
-  color: white;
-  text-shadow: 0px 0px 10px black;
-  animation: var(--animation);
-  transition: all 0.5s ease-out;
-  opacity: 1;
-  z-index: 0;
+  top: 50px;
+  width: 20px;
+  height: 600px;
+  z-index: 200;
+  & > input {
+    position: absolute;
+    top: 60%;
+    border: 1px solid red;
+    height: 20px;
+    transform: rotate(90deg);
+    background-color: blue;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 75vh;
+    &::-webkit-slider-runnable-track {
+      background: white;
+    }
+  }
 }
 
-.screen {
-  position: relative;
+#firstPlan {
+  animation: showElement 1s 0.5s ease-in-out forwards;
 }
 
-.cv {
-  &__skill {
-    width: 100%;
+#backPlan {
+  animation: stockElement 1s ease-in-out forwards;
+}
+
+@keyframes showElement {
+  0% {
+    z-index: 3;
+  }
+  40% {
+    z-index: 3;
+    transform: rotateX(87deg) translateZ(-65px) translateX(13px)
+      translateY(300px);
+  }
+  60% {
+    z-index: 3;
+    transform: rotateX(0deg) translateZ(135px) translateX(13px) translateY(20px);
+  }
+
+  100% {
+    z-index: 3;
+    transform: rotateX(0deg) translateZ(500px) translateX(150px)
+      translateY(50px);
+  }
+}
+
+@keyframes stockElement {
+  0% {
+    z-index: 4;
+    transform: rotateX(0deg) translateZ(500px) translateX(130px)
+      translateY(50px);
+  }
+  40% {
+    z-index: 4;
+    transform: rotateX(0deg) translateZ(135px) translateX(13px) translateY(20px);
+  }
+  60% {
+    transform: rotateX(87deg) translateZ(-65px) translateX(13px)
+      translateY(300px);
+  }
+
+  100% {
+  }
+}
+
+.board {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  &__middleCol {
+    width: 400px;
     height: 100%;
-    perspective: 1000px;
-    &__front {
-      width: 100%;
-      height: 100%;
-      transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    z-index: var(--zIndexMiddleCol);
+    &__screen {
       position: relative;
-      & > * {
-        @include floatingElement();
-      }
-      & > *:hover {
-        color: white;
-        cursor: pointer;
-        animation-play-state: paused;
-        font-size: 12vw;
+      background: url(../images/pipe-screen_375x250.png);
+      width: 375px;
+      height: 250px;
+      border-radius: 45px;
+      &::after {
+        content: '';
+        position: absolute;
+        border: 1px solid red;
+        margin: 10px;
+        width: 355px;
+        height: 230px;
+        border-radius: 30px;
+        background: black;
+        z-index: -1;
       }
     }
-    &__back {
-      width: 100%;
-      height: 100%;
-      transform-style: preserve-3d;
+    &__porthole {
       position: relative;
-      & > * {
-        @include floatingElement();
+      background: black;
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      overflow: hidden;
+      box-shadow: 0 0 5px 4px black;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        box-shadow: inset 7px -7px 100px 0px rgba($color-copper, 0.4);
       }
-      & > *:hover {
-        color: white;
-        cursor: pointer;
-        animation-play-state: paused;
-        font-size: 12vw;
+      &__mask {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        box-shadow: inset 7px -7px 30px 3px white;
+        z-index: 1;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          border-radius: 100px;
+          box-shadow: inset 0px 0px 15px 3px white;
+        }
       }
     }
-    &__ide {
-      width: 100%;
-      height: 100%;
-      transform-style: preserve-3d;
-      position: relative;
-      & > * {
-        @include floatingElement();
+  }
+  &__leftCol {
+    z-index: var(--zIndexLeftCol);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    height: 100%;
+    & > * {
+      width: 190px;
+      margin: 10px auto;
+    }
+    &__exp {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: var(--zIndexExp);
+      &__title {
+        @include rack-title;
       }
-      & > *:hover {
-        color: white;
-        cursor: pointer;
-        animation-play-state: paused;
-        font-size: 12vw;
+      &__content {
+        @include rack-content;
+        height: 150px;
+        &--0 {
+          width: 100%;
+          height: 100px;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: all 1s ease-in-out;
+          transform: rotateX(87deg) translateZ(-65px) translateX(13px);
+        }
+        &--1 {
+          width: 100%;
+          height: 100px;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: all 1s ease-in-out;
+          transform: rotateX(89deg) translateZ(-13px) translateX(13px);
+        }
+        &__front {
+          background: repeating-linear-gradient(
+            122deg,
+            rgba(179, 103, 0, 0.2) 5%,
+            rgba(255, 255, 255, 0.4) 10%,
+            rgba(179, 103, 0, 0.2) 25%
+          );
+          position: absolute;
+          width: 175px;
+          height: 100px;
+          transform: translateZ(100px);
+        }
+        &__back {
+          background: url(../images/copper-shiny-175x100.jpg);
+          position: absolute;
+          width: 175px;
+          height: 100px;
+          transform: translateZ(80px);
+          padding: 5px;
+          font-size: 13px;
+          color: black;
+        }
+        &__top {
+          background: blue;
+          position: absolute;
+          width: 175px;
+          height: 20px;
+          transform: rotateX(90deg) translateY(90px) translateZ(10px);
+        }
+        &__bottom {
+          background: rgb(88, 51, 9);
+          position: absolute;
+          width: 175px;
+          height: 20px;
+          text-align: center;
+          font-size: 15px;
+          color: white;
+          padding: 2.5px;
+          transform: rotateX(-90deg) translateY(-90px) translateZ(90px);
+          &:hover {
+            color: greenyellow;
+            text-shadow: 0 0 5px greenyellow;
+            cursor: pointer;
+          }
+        }
+        &__left {
+          background: red;
+          position: absolute;
+          width: 20px;
+          height: 100px;
+          transform: rotateY(-90deg) translateX(90px) translateZ(10px);
+        }
+        &__right {
+          background: green;
+          position: absolute;
+          width: 20px;
+          height: 100px;
+          transform: rotateY(90deg) translateX(-90px) translateZ(165px);
+        }
+
+        & > .firstPlan {
+          transform: rotateX(0deg) translateZ(600px);
+        }
       }
     }
-    &__software {
-      width: 100%;
-      height: 100%;
-      transform-style: preserve-3d;
-      position: relative;
-      & > * {
-        @include floatingElement();
+    &__edu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: var(--zIndexEdu);
+      &__title {
+        @include rack-title;
       }
-      & > *:hover {
-        color: white;
-        cursor: pointer;
-        animation-play-state: paused;
-        font-size: 12vw;
+      &__content {
+        @include rack-content;
+        height: 300px;
+        &--0 {
+          width: 100%;
+          height: 100px;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: all 0.5s ease-in-out;
+          transform: rotateX(83deg) translateZ(-65px) translateX(13px);
+          &:active {
+            transform: rotateX(0deg) translateZ(650px) translate(50%, 50%);
+            z-index: 5;
+            .board__leftCol__edu {
+              z-index: 1 !important;
+            }
+          }
+        }
+        &--1 {
+          width: 100%;
+          height: 100px;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: all 0.5s ease-in-out;
+          transform: rotateX(85deg) translateZ(-13px) translateX(13px);
+        }
+        &--2 {
+          width: 100%;
+          height: 100px;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: all 0.5s ease-in-out;
+          transform: rotateX(88deg) translateZ(37px) translateX(13px);
+        }
+        &--3 {
+          width: 100%;
+          height: 100px;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: all 0.5s ease-in-out;
+          transform: rotateX(91deg) translateZ(88px) translateX(13px);
+        }
+        &--4 {
+          width: 100%;
+          height: 100px;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: all 0.5s ease-in-out;
+          transform: rotateX(94deg) translateZ(138px) translateX(13px);
+        }
+        &__front {
+          background: $color-silver;
+          position: absolute;
+          width: 175px;
+          height: 100px;
+          transform: translateZ(100px);
+          font-size: 13px;
+          padding: 7px;
+        }
+        &__back {
+          background: $color-silver;
+          position: absolute;
+          width: 175px;
+          height: 100px;
+          transform: translateZ(80px);
+        }
+        &__top {
+          background: rgb(88, 51, 9);
+          position: absolute;
+          width: 175px;
+          height: 20px;
+          text-align: center;
+          font-size: 15px;
+          color: white;
+          padding: 2.5px;
+          transform: rotateX(-90deg) translateY(-90px) translateZ(90px);
+          &:hover {
+            color: greenyellow;
+            text-shadow: 0 0 5px greenyellow;
+            cursor: pointer;
+          }
+        }
+        & > .firstPlan {
+          transform: rotateX(0deg) translateZ(600px);
+        }
+      }
+    }
+  }
+  &__rightCol {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    width: 200px;
+    height: 100%;
+    color: #70ffc3;
+    font-family: 'retro-computer';
+    font-size: 12px;
+    z-index: var(--zIndexRightCol);
+    & > * {
+      width: 190px;
+      margin: 10px auto;
+    }
+    &__skill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__title {
+        @include rack-title;
+      }
+      &__content {
+        position: relative;
+        width: 200px;
+        height: 500px;
+        background: black;
+        box-shadow: 0 0 15px 1px black;
+        & > * {
+          margin: 10px;
+        }
       }
     }
   }
 }
 
-.randomBtn {
-  position: absolute;
-  width: 100px;
-  bottom: 20%;
-}
-
-.offsetBtn {
-  position: absolute;
-  width: 100px;
-  bottom: 15%;
+.floating {
+  &__skill {
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    &__softSkill {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      position: relative;
+      & > * {
+        @include floatingElement();
+      }
+      & > *:hover {
+        color: white;
+        cursor: pointer;
+        animation-play-state: paused;
+        font-size: 7vw;
+      }
+    }
+  }
 }
 
 @keyframes floating {
