@@ -3,12 +3,10 @@ import { Skill } from '../Molecules/skill'
 
 export default function RightCol({ cv }) {
   return (
-    <div className="board__rightCol">
-      <div className="board__rightCol__skill">
-        <div className="board__rightCol__skill__title">SKILLS</div>
-        <div className="board__rightCol__skill__content">
-          <AllSkills cv={cv} className={'board__rightCol__skill__content'} />
-        </div>
+    <div className="rightBox__rightCol">
+      <div className="rightBox__rightCol__skill">
+        <div className="rightBox__rightCol__skill__title">SKILLS</div>
+        <AllSkills cv={cv} className={'rightBox__rightCol__skill__content'} />
       </div>
     </div>
   )

@@ -1,17 +1,23 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.226e4c0f.css",
-    "main.js": "/portfolio/static/js/main.918fb306.js",
+    "main.css": "/portfolio/static/css/main.a05471a8.css",
+    "main.js": "/portfolio/static/js/main.d5e1984a.js",
+    "static/media/IronManOfWar-regular.ttf": "/portfolio/static/media/IronManOfWar-regular.ef7cb5ef6e29c5662656.ttf",
+    "static/media/IronManOfWar-black.ttf": "/portfolio/static/media/IronManOfWar-black.6cefc405f967fcf3155e.ttf",
+    "static/media/old-wood-600x600.jpg": "/portfolio/static/media/old-wood-600x600.480f25d763d0f31b5b55.jpg",
     "static/media/DancingScript-Regular.ttf": "/portfolio/static/media/DancingScript-Regular.5bfc0dcc0c0ff5a2832e.ttf",
-    "static/media/Lato-Regular.ttf": "/portfolio/static/media/Lato-Regular.9d883d540ee2b4de8024.ttf",
-    "static/media/Lato-LightItalic.ttf": "/portfolio/static/media/Lato-LightItalic.4310bbed01b37dfcee98.ttf",
-    "static/media/fart1.mp3": "/portfolio/static/media/fart1.3ad40d20dac58b5d5c1d.mp3",
+    "static/media/pipe-screen_375x250.png": "/portfolio/static/media/pipe-screen_375x250.9caef3d06cb7d8b28c2e.png",
+    "static/media/rack.svg": "/portfolio/static/media/rack.bf5091e2718a3b06b166.svg",
+    "static/media/retro-gaming.ttf": "/portfolio/static/media/retro-gaming.c1a52a602585b2d6baf8.ttf",
+    "static/media/steampunk-flyer.ttf": "/portfolio/static/media/steampunk-flyer.3f720aefb363e3ed8844.ttf",
+    "static/media/retro-computer.ttf": "/portfolio/static/media/retro-computer.d3aa5fc07030eb5f05a3.ttf",
+    "static/media/pipe-straight.svg": "/portfolio/static/media/pipe-straight.0dc6baee2affd546370a.svg",
     "index.html": "/portfolio/index.html",
-    "main.226e4c0f.css.map": "/portfolio/static/css/main.226e4c0f.css.map",
-    "main.918fb306.js.map": "/portfolio/static/js/main.918fb306.js.map"
+    "main.a05471a8.css.map": "/portfolio/static/css/main.a05471a8.css.map",
+    "main.d5e1984a.js.map": "/portfolio/static/js/main.d5e1984a.js.map"
   },
   "entrypoints": [
-    "static/css/main.226e4c0f.css",
-    "static/js/main.918fb306.js"
+    "static/css/main.a05471a8.css",
+    "static/js/main.d5e1984a.js"
   ]
 }

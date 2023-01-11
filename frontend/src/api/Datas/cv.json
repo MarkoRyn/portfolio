@@ -5,16 +5,16 @@
     "company": "Lafarge",
     "location": "St Quentin Fallavier (38)",
     "employmentType": "CDI",
-    "startDate": "April 2007",
-    "endDate": "December 2021"
+    "startDate": "Avril 2007",
+    "endDate": "Décembre 2021"
    },
    {
     "title": "Agent logistique",
     "company": "Divers entreprises",
     "location": "Isère (38) - Rhône (69)",
     "employmentType": "Interim \/ CDD",
-    "startDate": "September 1998",
-    "endDate": "March 2007"
+    "startDate": "Septembre 1998",
+    "endDate": "Mars 2007"
    }
   ],
   "education":[
@@ -23,39 +23,39 @@
     "school": "Openclassrooms",
     "degree": "Titre professionnel niveau 5 (BAC+2)",
     "location": "à distance",
-    "startDate": "March 2022",
-    "endDate": "November 2022"
+    "startDate": "Mars 2022",
+    "endDate": "Novembre 2022"
    },
    {
     "title": "Tailleur de pierre",
     "school": "Atelier des Bons Oeuvriers",
     "degree": "niveau CAP",
     "location": "St Antoine l'Abbaye (38)",
-    "startDate": "December 2016",
-    "endDate": "June 2017"
+    "startDate": "Décembre 2016",
+    "endDate": "Juin 2017"
    },
    {
     "title": "Webdesign",
     "school": "AFIP",
     "degree": "Attestation de formation",
     "location": "Lyon (69)",
-    "startDate": "September 2003",
-    "endDate": "December 2003"
+    "startDate": "Septembre 2003",
+    "endDate": "Décembre 2003"
    },
    {
     "title": "DEUG Géologie",
     "school": "Université Claude Bernard Lyon 1",
     "degree": "Bac +2",
     "location": "Lyon (69)",
-    "startDate": "September 1995",
-    "endDate": "June 1998"
+    "startDate": "Septembre 1995",
+    "endDate": "Juin 1998"
    },
    {
     "title": "Baccalauréat D",
     "school": "Lycée Léonard de Vinci",
     "degree": "Bac",
     "location": "Villefontaine (38)",
-    "endDate": "June 1994"
+    "endDate": "Juin 1994"
    }
   ],
   "skill":[

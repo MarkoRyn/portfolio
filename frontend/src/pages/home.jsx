@@ -9,7 +9,7 @@ import MiddleCol from '../components/Organisms/middleCol'
 import RightCol from '../components/Organisms/rightCol'
 
 export default function Cv() {
-  const { cvData, floatingSkill } = useContext(PortfolioContext)
+  const { cvData, floatingSkill, isCv, setIsCv } = useContext(PortfolioContext)
 
   const [level, setLevel] = useState('')
   const [yearInput, setYearInput] = useState(2022)
@@ -17,6 +17,24 @@ export default function Cv() {
   useEffect(() => {
     floatingSkill('softSkill')
   }, [floatingSkill])
+
+  useEffect(() => {
+    const mouseMove = (e) => {
+      console.log(`mousePosX=${e.clientX} - mousePosY=${e.clientY}`)
+      // const arm = document.querySelector('.arm')
+      // if (arm) {
+      //   arm.style.top = `${e.clientY}px`
+      //   arm.style.left = `${e.clientX}px`
+      // }
+    }
+    window.addEventListener('onClick', mouseMove)
+  }, [])
+
+  const handleCvClick = () => {
+    setTimeout(() => {
+      setIsCv(!isCv)
+    }, 1000)
+  }
 
   return (
     <>
@@ -43,22 +61,19 @@ export default function Cv() {
         }
         return (
           <div className="board" key={index}>
-            {/* <div className="timeScroller">
-                <label htmlFor="yearRange">{yearInput}</label>
-                <input
-                  type="range"
-                  className="timeScroller__btn"
-                  id="yearRange"
-                  min="1994"
-                  max="2022"
-                  onChange={() =>
-                    setYearInput(document.getElementById('yearRange').value)
-                  }
-                ></input>
-              </div> */}
-            <LeftCol cv={cv} index={index} />
-            <MiddleCol cv={cv} />
-            <RightCol cv={cv} />
+            <div className="leftBox">
+              <LeftCol cv={cv} index={index} isCv={isCv} />
+            </div>
+            <div className="middleBox">
+              <MiddleCol
+                cv={cv}
+                handleClick={handleCvClick}
+                setIsCv={setIsCv}
+              />
+            </div>
+            <div className="rightBox">
+              <RightCol cv={cv} />
+            </div>
           </div>
         )
       })}

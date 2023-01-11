@@ -1,0 +1,14 @@
+@import './variables';
+@import './mixins';
+
+.footer {
+  z-index: 10;
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1000px;
+  height: 100px;
+  bottom: 0;
+}

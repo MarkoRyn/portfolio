@@ -3,16 +3,20 @@ $color-silver: rgb(192, 192, 192);
 
 $confirm-color: green;
 
-$font-size-xxsmall: calc(2px + 1.5vw);
-$font-size-xsmall: calc(4px + 1.5vw);
-$font-size-small: calc(6px + 1.5vw);
-$font-size-medium: calc(8px + 1.5vw);
-$font-size-large: calc(10px + 1.5vw);
-$font-size-xlarge: calc(12px + 1.5vw);
+$glass-gradient: repeating-linear-gradient(
+  122deg,
+  rgba(179, 103, 0, 0.1) 5%,
+  rgba(255, 255, 255, 0.2) 10%,
+  rgba(179, 103, 0, 0.1) 25%
+);
 
-$font-size-xxsmall-fixed: 16px;
-$font-size-xsmall-fixed: 18px;
-$font-size-small-fixed: 20px;
-$font-size-medium-fixed: 22px;
-$font-size-large-fixed: 24px;
-$font-size-xlarge-fixed: 26px;
+$copper-gradient: linear-gradient(
+  122deg,
+  rgb(208, 152, 117) 0%,
+  rgb(193, 109, 62) 20%,
+  rgb(129, 57, 19) 40%,
+  rgb(202, 114, 66) 54%,
+  rgb(231, 179, 130) 65%,
+  rgb(165, 100, 62) 85%,
+  rgb(122, 57, 25) 100%
+);

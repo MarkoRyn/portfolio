@@ -32,17 +32,12 @@ button {
 }
 
 .main {
-  position: absolute;
   display: flex;
   justify-content: center;
   top: 100px;
   width: 100vw;
   height: 600px;
-  min-width: 900px;
   overflow: hidden;
-  &__content {
-    width: 800px;
-  }
 }
 
 div:visited {

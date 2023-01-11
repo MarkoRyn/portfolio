@@ -5,14 +5,14 @@ export const AllSkills = ({ cv, className }) => {
     <>
       {cv.skill.map((skill, index) => {
         return (
-          <>
+          <div className={`${className}`} key={index}>
             <div className={`${className}__frontend`}>
               {skill.frontend.map((frontSkill, index) => {
                 return (
                   <Skill
                     className={`${className}__frontend--${index}`}
                     children={frontSkill}
-                    index={index}
+                    keyIndex={index}
                   />
                 )
               })}
@@ -23,7 +23,7 @@ export const AllSkills = ({ cv, className }) => {
                   <Skill
                     className={`${className}__backend--${index}`}
                     children={backSkill}
-                    index={index}
+                    keyIndex={index}
                   />
                 )
               })}
@@ -34,7 +34,7 @@ export const AllSkills = ({ cv, className }) => {
                   <Skill
                     className={`${className}__ide--${index}`}
                     children={ideSkill}
-                    index={index}
+                    keyIndex={index}
                   />
                 )
               })}
@@ -45,12 +45,12 @@ export const AllSkills = ({ cv, className }) => {
                   <Skill
                     className={`${className}__software--${index}`}
                     children={softwareSkill}
-                    index={index}
+                    keyIndex={index}
                   />
                 )
               })}
             </div>
-          </>
+          </div>
         )
       })}
     </>

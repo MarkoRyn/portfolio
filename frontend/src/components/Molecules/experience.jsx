@@ -11,23 +11,13 @@ export const Experience = ({ experience, className, handleClick }) => {
             }}
           >
             <div className={`${className}__back`}>
-              <div className={`${className}__front__header`}>
-                <h3 className={`${className}__front__header__title`}>
-                  {exp.title}
-                </h3>
-                <div className={`${className}__front__header__company`}>
-                  {exp.company}
-                </div>
+              <h3 className={`${className}__back__title`}>{exp.title}</h3>
+              <div className={`${className}__back__company`}>{exp.company}</div>
+              <div className={`${className}__back__location`}>
+                {exp.location}
               </div>
-              <div className={`${className}__front__content`}>
-                <div className={`${className}__front__content__location`}>
-                  {exp.location}
-                </div>
-                <div className={`${className}__front__content__date`}>
-                  from {exp.startDate}
-                  <br />
-                  to {exp.endDate}
-                </div>
+              <div className={`${className}__back__date`}>
+                {exp.startDate} - {exp.endDate}
               </div>
             </div>
             <div className={`${className}__front`}></div>
