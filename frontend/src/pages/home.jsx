@@ -9,7 +9,13 @@ import MiddleCol from '../components/Organisms/middleCol'
 import RightCol from '../components/Organisms/rightCol'
 
 export default function Cv() {
-  const { cvData, floatingSkill, isCv, setIsCv } = useContext(PortfolioContext)
+  const {
+    cvData,
+    floatingSkill,
+    leftColShow,
+    setLeftColShow,
+    setLeftColDelay,
+  } = useContext(PortfolioContext)
 
   const [level, setLevel] = useState('')
   const [yearInput, setYearInput] = useState(2022)
@@ -31,9 +37,17 @@ export default function Cv() {
   }, [])
 
   const handleCvClick = () => {
+    setLeftColDelay('cv')
     setTimeout(() => {
-      setIsCv(!isCv)
-    }, 1000)
+      setLeftColShow('cv')
+    }, 500)
+  }
+
+  const handleIdClick = () => {
+    setLeftColDelay('identity')
+    setTimeout(() => {
+      setLeftColShow('identity')
+    }, 500)
   }
 
   return (
@@ -62,13 +76,13 @@ export default function Cv() {
         return (
           <div className="board" key={index}>
             <div className="leftBox">
-              <LeftCol cv={cv} index={index} isCv={isCv} />
+              <LeftCol cv={cv} index={index} />
             </div>
             <div className="middleBox">
               <MiddleCol
                 cv={cv}
-                handleClick={handleCvClick}
-                setIsCv={setIsCv}
+                handleCvClick={handleCvClick}
+                handleIdClick={handleIdClick}
               />
             </div>
             <div className="rightBox">

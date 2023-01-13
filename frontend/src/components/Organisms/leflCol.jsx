@@ -9,8 +9,8 @@ import Invert from '../Effects/Invert'
 
 import picture from '../../utils/images/MRa-1.png'
 
-export default function LeftCol({ cv, isCv }) {
-  const { visible } = useContext(PortfolioContext)
+export default function LeftCol({ cv }) {
+  const { leftColShow } = useContext(PortfolioContext)
 
   const [targetCatElement, setTargetCatElement] = useState('')
 
@@ -70,7 +70,7 @@ export default function LeftCol({ cv, isCv }) {
   return (
     <>
       <div className="leftBox__background"></div>
-      {isCv && (
+      {leftColShow === 'cv' && (
         <Invert elementClass="leftBox__cv" category="cv">
           <div className="leftBox__cv__exp">
             <div className="leftBox__cv__exp__title">EXPERIENCE</div>
@@ -94,7 +94,7 @@ export default function LeftCol({ cv, isCv }) {
           </div>
         </Invert>
       )}
-      {!isCv && (
+      {leftColShow === 'identity' && (
         <Invert elementClass="leftBox__identity" category="identity">
           <div className="leftBox__identity__picture">
             <img src={picture} alt="" className="" />

@@ -53,18 +53,16 @@
   }
   40% {
     z-index: 3;
-    transform: rotateX(87deg) translateZ(-65px) translateX(13px)
-      translateY(300px);
+    transform: rotateX(87deg) translate3d(13px, 300px, -65px);
   }
   60% {
     z-index: 3;
-    transform: rotateX(0deg) translateZ(135px) translateX(13px) translateY(20px);
+    transform: rotateX(0deg) translate3d(13px, 20px, 135px);
   }
 
   100% {
     z-index: 3;
-    transform: rotateX(0deg) translateZ(500px) translateX(135px)
-      translateY(50px);
+    transform: rotateX(0deg) translate3d(135px, 50px, 500px);
   }
 }
 #backPlan {
@@ -155,6 +153,8 @@
     height: 100%;
     background-color: rgb(82, 50, 8);
     transition: all 0.5s ease-in-out;
+    transform: translateZ(-200px) translateX(-15%);
+    opacity: 0;
     & > * {
       width: 190px;
       margin: 10px auto;
@@ -168,7 +168,7 @@
           height: 100px;
           position: absolute;
           transform-style: preserve-3d;
-          transition: all 1s ease-in-out;
+          transition: all 0.5s ease-in-out;
           transform: rotateX(87deg) translateZ(-65px) translateX(13px);
         }
         &--1 {
@@ -176,7 +176,7 @@
           height: 100px;
           position: absolute;
           transform-style: preserve-3d;
-          transition: all 1s ease-in-out;
+          transition: all 0.5s ease-in-out;
           transform: rotateX(89deg) translateZ(-113px) translateX(13px);
         }
       }
@@ -188,7 +188,7 @@
         &--0 {
           width: 100%;
           height: 100px;
-          position: relative;
+          position: absolute;
           transform-style: preserve-3d;
           transition: all 0.5s ease-in-out;
           transform: rotateX(83deg) translateZ(-65px) translateX(13px);
@@ -196,34 +196,34 @@
         &--1 {
           width: 100%;
           height: 100px;
-          position: relative;
+          position: absolute;
           transform-style: preserve-3d;
           transition: all 0.5s ease-in-out;
-          transform: rotateX(85deg) translateZ(-13px) translateX(13px);
+          transform: rotateX(85deg) translateZ(-113px) translateX(13px);
         }
         &--2 {
           width: 100%;
           height: 100px;
-          position: relative;
+          position: absolute;
           transform-style: preserve-3d;
           transition: all 0.5s ease-in-out;
-          transform: rotateX(88deg) translateZ(37px) translateX(13px);
+          transform: rotateX(88deg) translateZ(-163px) translateX(13px);
         }
         &--3 {
           width: 100%;
           height: 100px;
-          position: relative;
+          position: absolute;
           transform-style: preserve-3d;
           transition: all 0.5s ease-in-out;
-          transform: rotateX(91deg) translateZ(88px) translateX(13px);
+          transform: rotateX(91deg) translateZ(-212px) translateX(13px);
         }
         &--4 {
           width: 100%;
           height: 100px;
-          position: relative;
+          position: absolute;
           transform-style: preserve-3d;
           transition: all 0.5s ease-in-out;
-          transform: rotateX(94deg) translateZ(138px) translateX(13px);
+          transform: rotateX(94deg) translateZ(-261px) translateX(13px);
         }
       }
     }
@@ -238,7 +238,9 @@
     width: 220px;
     height: 100%;
     background: $copper-gradient;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    transform: translateZ(-200px) translateX(-15%);
+    opacity: 0;
     &__picture {
       width: 175px;
       height: 175px;
@@ -259,6 +261,7 @@
   min-width: 400px;
   height: 95%;
   transform-style: preserve-3d;
+  z-index: 1;
   &__middleCol {
     width: 100%;
     height: 100%;
@@ -267,26 +270,49 @@
     justify-content: space-evenly;
     align-items: center;
     position: relative;
+    transform-style: preserve-3d;
     &__screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
-      background: url(../images/pipe-screen_375x250.png);
-      min-width: 375px;
+      width: 375px;
       height: 250px;
       border-radius: 45px;
+      // transform: translate3d(0, 100px, 400px);
+      z-index: 0;
+      &__border {
+        position: absolute;
+        background-image: url(../images/pipe-screen.png);
+        background-size: cover;
+        width: 375px;
+        height: 250px;
+        border-radius: 45px;
+        z-index: 1;
+      }
       &__content {
         position: absolute;
-        margin: 10px;
-        padding: 30px 40px;
-        min-width: 355px;
-        height: 230px;
-        border-radius: 30px;
-        background: black;
-        z-index: -1;
-        font-family: 'retro-computer';
-        color: #70ffc3;
-        font-size: 12px;
+        width: 330px;
+        height: 200px;
+        &__text {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 30px;
+          padding: 20px;
+          font-family: monospace;
+          color: #70ffc3;
+          font-size: 12px;
+        }
+        &__background {
+          position: absolute;
+          background: black;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
+
     &__porthole {
       position: relative;
       background: black;
@@ -332,7 +358,7 @@
       height: 50px;
       background: $copper-gradient;
       & button {
-        width: 40px;
+        width: 100px;
         height: 25px;
       }
     }
@@ -392,7 +418,7 @@
 }
 
 .moveForward {
-  transform: translateZ(0px);
+  transform: translate3d(0, 0, 0);
   opacity: 1;
 }
 

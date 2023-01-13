@@ -15,7 +15,8 @@ export const PostProvider = ({ children }) => {
   const expirationDate = localStorage.getItem('expirationDate')
   const [isLoading, setIsLoading] = useState(true)
 
-  const [isCv, setIsCv] = useState(false)
+  const [leftColShow, setLeftColShow] = useState('identity')
+  const [leftColDelay, setLeftColDelay] = useState('identity')
 
   function getRandom(min, max) {
     return Math.random() * (max - min) + min
@@ -163,12 +164,14 @@ export const PostProvider = ({ children }) => {
         cvData,
         userId,
         isLoading,
-        isCv,
+        leftColShow,
+        leftColDelay,
         getCv,
         getUserId,
         setIsLoading,
-        setIsCv,
+        setLeftColShow,
         floatingSkill,
+        setLeftColDelay,
       }}
     >
       {children}
