@@ -4,25 +4,16 @@ import React, { useContext, useEffect, useState } from 'react'
 
 import { PortfolioContext } from '../utils/contexts/portfolioContext'
 
-import LeftCol from '../components/Organisms/leflCol'
-import MiddleCol from '../components/Organisms/middleCol'
-import RightCol from '../components/Organisms/rightCol'
+import { LeftCol } from '../components/Organisms/leflCol'
+import { MiddleCol } from '../components/Organisms/middleCol'
+import { RightCol } from '../components/Organisms/rightCol'
 
 export default function Cv() {
-  const {
-    cvData,
-    floatingSkill,
-    leftColShow,
-    setLeftColShow,
-    setLeftColDelay,
-  } = useContext(PortfolioContext)
+  const { cvData, leftColShow, setLeftColShow, setLeftColDelay } =
+    useContext(PortfolioContext)
 
   const [level, setLevel] = useState('')
   const [yearInput, setYearInput] = useState(2022)
-
-  useEffect(() => {
-    floatingSkill('softSkill')
-  }, [floatingSkill])
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -40,14 +31,14 @@ export default function Cv() {
     setLeftColDelay('cv')
     setTimeout(() => {
       setLeftColShow('cv')
-    }, 500)
+    }, 300)
   }
 
   const handleIdClick = () => {
     setLeftColDelay('identity')
     setTimeout(() => {
       setLeftColShow('identity')
-    }, 500)
+    }, 300)
   }
 
   return (

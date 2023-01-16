@@ -7,6 +7,9 @@ import Header from './components/Organisms/header'
 import Footer from './components/Organisms/footer'
 import Home from './pages/home'
 import PageNotFound from './pages/pageNotFound'
+
+import { GearWheel } from './test/gearWheel'
+
 import { PostProvider } from './utils/contexts/portfolioContext'
 
 function App() {
@@ -22,6 +25,7 @@ function App() {
                   <Route exact path="/" element={<Home />} />
                   <Route path="*" element={<PageNotFound />} />
                   <Route path="/error" element={<PageNotFound />} />
+                  <Route path="/test" element={<GearWheel />} />
                 </Routes>
               </div>
             </div>

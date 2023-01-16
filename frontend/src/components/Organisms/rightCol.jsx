@@ -1,7 +1,6 @@
 import { AllSkills } from '../Molecules/allSkills'
-import { Skill } from '../Molecules/skill'
 
-export default function RightCol({ cv }) {
+export const RightCol = ({ cv }) => {
   return (
     <div className="rightBox__rightCol">
       <div className="rightBox__rightCol__skill">

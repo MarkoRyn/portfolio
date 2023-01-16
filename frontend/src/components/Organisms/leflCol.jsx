@@ -5,11 +5,11 @@ import { Education } from '../Molecules/education'
 
 import { PortfolioContext } from '../../utils/contexts/portfolioContext'
 
-import Invert from '../Effects/Invert'
+import { Inverting } from '../Effects/Inverting'
 
 import picture from '../../utils/images/MRa-1.png'
 
-export default function LeftCol({ cv }) {
+export const LeftCol = ({ cv }) => {
   const { leftColShow } = useContext(PortfolioContext)
 
   const [targetCatElement, setTargetCatElement] = useState('')
@@ -71,7 +71,7 @@ export default function LeftCol({ cv }) {
     <>
       <div className="leftBox__background"></div>
       {leftColShow === 'cv' && (
-        <Invert elementClass="leftBox__cv" category="cv">
+        <Inverting elementClass="leftBox__cv" category="cv">
           <div className="leftBox__cv__exp">
             <div className="leftBox__cv__exp__title">EXPERIENCE</div>
             <div className="leftBox__cv__exp__content">
@@ -92,14 +92,14 @@ export default function LeftCol({ cv }) {
               />
             </div>
           </div>
-        </Invert>
+        </Inverting>
       )}
       {leftColShow === 'identity' && (
-        <Invert elementClass="leftBox__identity" category="identity">
+        <Inverting elementClass="leftBox__identity" category="identity">
           <div className="leftBox__identity__picture">
             <img src={picture} alt="" className="" />
           </div>
-        </Invert>
+        </Inverting>
       )}
     </>
   )

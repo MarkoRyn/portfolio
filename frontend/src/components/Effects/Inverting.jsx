@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 
 import { PortfolioContext } from '../../utils/contexts/portfolioContext'
 
-export default function Invert({ children, elementClass, category }) {
+export const Inverting = ({ children, elementClass, category }) => {
   const { leftColShow, leftColDelay } = useContext(PortfolioContext)
 
   const [className, setClassName] = useState()
@@ -15,14 +15,10 @@ export default function Invert({ children, elementClass, category }) {
   }, [category])
 
   useEffect(() => {
-    leftColDelay !== category
-      ? setClassName('moveBack')
-      : setClassName('moveForward')
+    leftColDelay !== category ? setClassName('moveBack') : setClassName('')
     setTimeout(() => {
-      leftColShow === category
-        ? setClassName('moveForward')
-        : setClassName('moveBack')
-    }, 500)
+      leftColShow === category ? setClassName('moveForward') : setClassName('')
+    }, 300)
   }, [leftColDelay, category, leftColShow])
 
   console.log(leftColDelay)
