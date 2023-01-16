@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.cd1d404b.css",
-    "main.js": "/portfolio/static/js/main.cda6a7a7.js",
+    "main.css": "/portfolio/static/css/main.373f059b.css",
+    "main.js": "/portfolio/static/js/main.dc16355d.js",
     "static/media/IronManOfWar-regular.ttf": "/portfolio/static/media/IronManOfWar-regular.ef7cb5ef6e29c5662656.ttf",
     "static/media/IronManOfWar-black.ttf": "/portfolio/static/media/IronManOfWar-black.6cefc405f967fcf3155e.ttf",
     "static/media/pipe-screen.png": "/portfolio/static/media/pipe-screen.064f646fbbb5b3baf8f6.png",
@@ -14,11 +14,11 @@
     "static/media/retro-computer.ttf": "/portfolio/static/media/retro-computer.d3aa5fc07030eb5f05a3.ttf",
     "static/media/pipe-straight.svg": "/portfolio/static/media/pipe-straight.0dc6baee2affd546370a.svg",
     "index.html": "/portfolio/index.html",
-    "main.cd1d404b.css.map": "/portfolio/static/css/main.cd1d404b.css.map",
-    "main.cda6a7a7.js.map": "/portfolio/static/js/main.cda6a7a7.js.map"
+    "main.373f059b.css.map": "/portfolio/static/css/main.373f059b.css.map",
+    "main.dc16355d.js.map": "/portfolio/static/js/main.dc16355d.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd1d404b.css",
-    "static/js/main.cda6a7a7.js"
+    "static/css/main.373f059b.css",
+    "static/js/main.dc16355d.js"
   ]
 }
