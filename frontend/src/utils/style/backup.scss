@@ -1,0 +1,29 @@
+// .timeScroller {
+//   --yearScrollY: 200px;
+// }
+
+// .timeScroller {
+//   display: flex;
+//   justify-content: center;
+//   position: absolute;
+//   top: 50px;
+//   width: 20px;
+//   height: 600px;
+//   z-index: 200;
+//   & > input {
+//     position: absolute;
+//     top: 60%;
+//     border: 1px solid red;
+//     height: 20px;
+//     transform: rotate(90deg);
+//     background-color: blue;
+//     -webkit-appearance: none;
+//     appearance: none;
+//     background: transparent;
+//     cursor: pointer;
+//     width: 75vh;
+//     &::-webkit-slider-runnable-track {
+//       background: white;
+//     }
+//   }
+// }

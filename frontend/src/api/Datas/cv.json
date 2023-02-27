@@ -1,6 +1,7 @@
 [{
   "experience":[
    {
+    "titleId": "expTechnician",
     "title": "Technicien de laboratoire",
     "company": "Lafarge",
     "location": "St Quentin Fallavier (38)",
@@ -9,6 +10,7 @@
     "endDate": "Décembre 2021"
    },
    {
+    "titleId": "expLogistician",
     "title": "Agent logistique",
     "company": "Divers entreprises",
     "location": "Isère (38) - Rhône (69)",
@@ -19,6 +21,7 @@
   ],
   "education":[
    {
+    "titleId": "eduWebDev",
     "title": "Développeur web",
     "school": "Openclassrooms",
     "degree": "Titre professionnel niveau 5 (BAC+2)",
@@ -27,6 +30,7 @@
     "endDate": "Novembre 2022"
    },
    {
+    "titleId": "eduStoneCarver",
     "title": "Tailleur de pierre",
     "school": "Atelier des Bons Oeuvriers",
     "degree": "niveau CAP",
@@ -35,6 +39,7 @@
     "endDate": "Juin 2017"
    },
    {
+    "titleId": "eduWebDesign",
     "title": "Webdesign",
     "school": "AFIP",
     "degree": "Attestation de formation",
@@ -43,6 +48,7 @@
     "endDate": "Décembre 2003"
    },
    {
+    "titleId": "eduDeug",
     "title": "DEUG Géologie",
     "school": "Université Claude Bernard Lyon 1",
     "degree": "Bac +2",
@@ -51,6 +57,7 @@
     "endDate": "Juin 1998"
    },
    {
+    "titleId": "edubac",
     "title": "Baccalauréat D",
     "school": "Lycée Léonard de Vinci",
     "degree": "Bac",
@@ -60,10 +67,10 @@
   ],
   "skill":[
    {
-    "ide": ["Visual Code Studio"],
+    "ide": ["Visual Studio Code"],
     "frontend": ["HTML 5", "CSS 3", "Sass", "Javascript", "React.js 18"],
     "backend": ["Node.js", "Express.js 4", "MongoDB 6"],
-    "software": ["Word", "Excel", "Sheets", "Docs", "Slides", "Photoshop", "Illustrator", "Sketchup"]
+    "software": ["Word", "Excel", "Google Sheets", "Google Docs", "Google Slides", "Photoshop", "Illustrator", "Sketchup"]
    }
   ],
   "softSkill":[ "Travail en équipe", "Autonomie", "Capacité d'adaptation", "Rigueur", "Curiosité", "Persévérence", "Réactivité"

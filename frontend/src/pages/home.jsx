@@ -1,6 +1,7 @@
 import '../utils/style/home.scss'
 
 import React, { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { PortfolioContext } from '../utils/contexts/portfolioContext'
 
@@ -9,11 +10,21 @@ import { MiddleCol } from '../components/Organisms/middleCol'
 import { RightCol } from '../components/Organisms/rightCol'
 
 export default function Cv() {
-  const { cvData, leftColShow, setLeftColShow, setLeftColDelay } =
-    useContext(PortfolioContext)
+  const {
+    cvData,
+    descJsonData,
+    categoryText,
+    setCategoryText,
+    setDescText,
+    getDesc,
+    resetScreen,
+    setResetScreen,
+  } = useContext(PortfolioContext)
 
   const [level, setLevel] = useState('')
   const [yearInput, setYearInput] = useState(2022)
+
+  getDesc()
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -27,19 +38,13 @@ export default function Cv() {
     window.addEventListener('onClick', mouseMove)
   }, [])
 
-  const handleCvClick = () => {
-    setLeftColDelay('cv')
-    setTimeout(() => {
-      setLeftColShow('cv')
-    }, 300)
-  }
+  useEffect(() => {
+    setCategoryText('identity')
+  }, [setCategoryText])
 
-  const handleIdClick = () => {
-    setLeftColDelay('identity')
-    setTimeout(() => {
-      setLeftColShow('identity')
-    }, 300)
-  }
+  useEffect(() => {
+    setDescText(descJsonData[categoryText])
+  }, [])
 
   return (
     <>
@@ -70,11 +75,7 @@ export default function Cv() {
               <LeftCol cv={cv} index={index} />
             </div>
             <div className="middleBox">
-              <MiddleCol
-                cv={cv}
-                handleCvClick={handleCvClick}
-                handleIdClick={handleIdClick}
-              />
+              <MiddleCol cv={cv} />
             </div>
             <div className="rightBox">
               <RightCol cv={cv} />

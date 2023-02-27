@@ -1,23 +1,25 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { PortfolioContext } from '../../utils/contexts/portfolioContext'
 
 export const Typing = ({ className, text }) => {
-  const [timer, setTimer] = useState()
+  const { categoryText } = useContext(PortfolioContext)
   const descContent = document.querySelector(`.${className}`)
 
   useEffect(() => {
-    setTimer(60)
     function typeWriter(words, index) {
-      if (index < words.length) {
-        setTimeout(() => {
-          descContent.innerHTML += `<span>${words[index]}</span>`
-          typeWriter(text, index + 1)
-        }, 50)
-      }
+      const typingId = setTimeout(() => {
+        if (index < words.length) {
+          if (descContent) {
+            descContent.innerHTML += `<span>${words[index]}</span>`
+            typeWriter(text, index + 1)
+          }
+        }
+      }, 50)
     }
     setTimeout(() => {
       typeWriter(text, 0)
-    }, timer)
-  }, [text, timer, descContent])
+    }, 60)
+  }, [text, descContent])
 
   return <div className={className}></div>
 }

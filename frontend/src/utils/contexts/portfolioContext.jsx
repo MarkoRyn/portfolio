@@ -1,5 +1,7 @@
 import cvJsonData from '../../api/Datas/cv.json'
 
+import descJsonData from '../../api/Datas/description.json'
+
 import React, { createContext, useState, useEffect } from 'react'
 
 import UserService from '../../api/Services/UserServices'
@@ -7,16 +9,20 @@ const userServices = new UserService()
 
 export const PortfolioContext = createContext({})
 
-export const PostProvider = ({ children }) => {
+export const PortfolioProvider = ({ children }) => {
   const [usersData, setUsersData] = useState([])
   const [userIdData, setUserIdData] = useState([])
   const [cvData, setCvData] = useState([])
+  const [descText, setDescText] = useState()
+  const [categoryText, setCategoryText] = useState('identity')
+  const [isLoading, setIsLoading] = useState(true)
+  const [resetScreen, setResetScreen] = useState(true)
+
+  const [colShow, setColShow] = useState('identity')
+  const [colDelay, setColDelay] = useState('identity')
+
   const userId = localStorage.getItem('userId')
   const expirationDate = localStorage.getItem('expirationDate')
-  const [isLoading, setIsLoading] = useState(true)
-
-  const [leftColShow, setLeftColShow] = useState('identity')
-  const [leftColDelay, setLeftColDelay] = useState('identity')
 
   // to disconnect if token expired
   useEffect(() => {
@@ -26,17 +32,17 @@ export const PostProvider = ({ children }) => {
     }
   }, [expirationDate])
 
-  useEffect(() => {
-    if (userId) {
-      const getUsers = async () => {
-        setIsLoading(true)
-        const response = await userServices.getUser()
-        setUsersData(response)
-        setIsLoading(false)
-      }
-      getUsers()
-    }
-  }, [userId])
+  // useEffect(() => {
+  //   if (userId) {
+  //     const getUsers = async () => {
+  //       setIsLoading(true)
+  //       const response = await userServices.getUser()
+  //       setUsersData(response)
+  //       setIsLoading(false)
+  //     }
+  //     getUsers()
+  //   }
+  // }, [userId])
 
   useEffect(() => {
     const getCv = async () => {
@@ -46,6 +52,15 @@ export const PostProvider = ({ children }) => {
     }
     getCv()
   }, [])
+
+  useEffect(() => {
+    const getDesc = async () => {
+      setIsLoading(true)
+      setDescText(descJsonData[categoryText])
+      setIsLoading(false)
+    }
+    getDesc()
+  }, [descText, categoryText])
 
   // functions for re-rendering on every new api call
   // const getCv = async () => {
@@ -71,6 +86,13 @@ export const PostProvider = ({ children }) => {
     reRender()
   }
 
+  const getDesc = async () => {
+    const reRender = async () => {
+      setDescText(descJsonData[categoryText])
+    }
+    reRender()
+  }
+
   // const getUsers = async () => {
   //   const reRender = async () => {
   //     const reqRes = await userServices.getUser()
@@ -83,15 +105,23 @@ export const PostProvider = ({ children }) => {
     <PortfolioContext.Provider
       value={{
         cvData,
+        descText,
         userId,
         isLoading,
-        leftColShow,
-        leftColDelay,
+        colShow,
+        colDelay,
+        categoryText,
+        descJsonData,
+        resetScreen,
         getCv,
         getUserId,
+        getDesc,
         setIsLoading,
-        setLeftColShow,
-        setLeftColDelay,
+        setColShow,
+        setColDelay,
+        setDescText,
+        setCategoryText,
+        setResetScreen,
       }}
     >
       {children}

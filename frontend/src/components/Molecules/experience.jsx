@@ -7,7 +7,7 @@ export const Experience = ({ experience, className, handleClick }) => {
             className={`${className}--${index}`}
             key={index}
             onClick={() => {
-              handleClick(index, 'exp')
+              handleClick(index, 'experience')
             }}
           >
             <div className={`${className}__back`}>

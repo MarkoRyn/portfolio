@@ -7,7 +7,7 @@ export const Education = ({ education, className, handleClick }) => {
             className={`${className}--${index}`}
             key={index}
             onClick={() => {
-              handleClick(index, 'edu')
+              handleClick(index, 'education')
             }}
           >
             <div className={`${className}__back`}>

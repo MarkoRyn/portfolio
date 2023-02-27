@@ -1,0 +1,47 @@
+@import '../style/mixins';
+
+.gearWheel {
+  &__wheelBox {
+    width: 100%;
+    height: 100%;
+    top: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 5s infinite linear;
+    // animation: rotate 5s infinite linear;
+    transform: rotateY(-50deg) rotateX(20deg);
+    @include cube;
+    &__cylinder {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      z-index: 1;
+      & > * {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(102, 71, 13);
+        outline: solid;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(0deg) rotateZ(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateZ(360deg) rotateX(360deg) rotateY(360deg);
+  }
+}

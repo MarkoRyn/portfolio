@@ -1,3 +1,5 @@
+@import '../style/variables';
+
 @mixin floatingElement {
   position: absolute;
   white-space: nowrap;
@@ -15,16 +17,15 @@
   position: relative;
   width: 200px;
   perspective: 1000px;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-    url(../images/svg/rack.svg);
-  box-shadow: 0 0 15px 1px black;
+  background: url(../images/svg/rack.svg);
+  // box-shadow: 0 0 15px 1px black;
 }
 
 @mixin rack-title {
   font-size: 25px;
   font-family: 'ironman-black';
-  color: $color-copper;
-  text-shadow: 0 0 5px black;
+  color: rgb(248, 235, 217);
+  // text-shadow: 0 0 2px black;
 }
 
 @mixin darken-svg {
@@ -45,15 +46,100 @@
   border-style: solid;
   border-image: repeating-linear-gradient(
       155deg,
-      rgb(155, 87, 53) 0%,
-      rgb(193, 109, 62) 10%,
-      rgb(129, 57, 19) 20%,
-      rgb(202, 114, 66) 25%,
-      rgb(231, 179, 130) 32%,
-      rgb(165, 100, 62) 42%,
-      rgb(155, 87, 53) 50%
+      rgb(82, 34, 8) 0%,
+      rgb(197, 197, 197) 7%,
+      rgb(161, 115, 92) 12%,
+      rgb(201, 127, 67) 17%,
+      rgb(107, 44, 23) 30%,
+      rgb(128, 100, 88) 37%,
+      rgb(82, 34, 8) 50%
     )
     1;
+}
+
+@mixin border {
+  border-width: 0px 15px 0 15px;
+  border-style: solid;
+  border-image: repeating-linear-gradient(
+      90deg,
+      rgba(127, 87, 79, 1) 0%,
+      rgba(136, 136, 136, 1) 0.1%,
+      rgba(110, 70, 50, 1) 0.166%,
+      rgba(156, 94, 42, 1) 0.233%,
+      rgba(76, 26, 10, 1) 0.4%,
+      rgba(98, 72, 60, 1) 0.5%,
+      rgba(75, 26, 0, 1) 0.633%
+    )
+    1;
+}
+
+@mixin colBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 100%;
+  transform-style: preserve-3d;
+  &__background {
+    position: absolute;
+    width: 125%;
+    height: 135%;
+    background: black;
+  }
+  & > svg {
+    position: absolute;
+    top: 0px;
+    left: 2%;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    border-radius: 25px;
+  }
+  &__border {
+    position: absolute;
+    top: 0px;
+    left: 2%;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: url(..//images/svg/pipe-straight-2.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-radius: 25px;
+  }
+  &__cv {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    width: 75%;
+    height: 87%;
+    background: $copper-linear-gradient;
+    transition: all 0.5s ease-in-out;
+    transform: translateZ(-200px) translateX(-25%);
+    opacity: 0;
+    box-shadow: inset 0 0 15px 5px black;
+    & > * {
+      width: 190px;
+      padding: 10px 0;
+    }
+  }
+  &__identity {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 10px auto;
+    width: 75%;
+    height: 87%;
+    background: $copper-linear-gradient;
+    transition: all 0.5s ease-in-out;
+    transform: translateZ(-200px) translateX(31%);
+    opacity: 0;
+    box-shadow: inset 0 0 15px 5px black;
+  }
 }
 
 @mixin category {
@@ -78,7 +164,7 @@
       flex-direction: column;
       justify-content: space-evenly;
       @include border-ridge;
-      background: $copper-gradient;
+      background: $copper-linear-gradient;
       position: absolute;
       width: 175px;
       height: 100px;
@@ -105,13 +191,15 @@
     }
     &__bottom {
       @include border-ridge;
-      background: rgb(88, 51, 9);
+      background: $copper-linear-gradient;
       position: absolute;
+      padding: 2px;
       width: 175px;
       height: 20px;
-      font-size: 10px;
+      font-size: 11px;
       text-transform: uppercase;
       color: white;
+      box-shadow: 1px 1px 5px 2px black;
       transform: rotateX(-90deg) translateY(-90px) translateZ(90px);
       &:hover {
         color: greenyellow;
@@ -136,4 +224,40 @@
       transform: rotateY(90deg) translateX(-89px) translateZ(165px);
     }
   }
+}
+
+@mixin cube {
+  &__cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+
+    & > * {
+      position: absolute;
+    }
+    &__right {
+      background: linear-gradient(125deg, rgb(248, 252, 40), white);
+    }
+    &__left {
+      background: linear-gradient(125deg, rgb(159, 161, 20), white);
+    }
+    &__bottom {
+      background: linear-gradient(125deg, rgb(255, 0, 0), rgb(235, 123, 123));
+    }
+    &__top {
+      background: linear-gradient(125deg, rgb(56, 37, 2), rgb(170, 114, 9));
+    }
+    &__front {
+      background: linear-gradient(125deg, rgb(20, 165, 28), white);
+    }
+    &__back {
+      background: linear-gradient(125deg, rgb(188, 228, 12), white);
+    }
+  }
+}
+
+@mixin cover {
+  position: absolute;
+  background: linear-gradient(0deg, rgb(102, 71, 13), black);
 }

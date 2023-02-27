@@ -10,15 +10,29 @@ $glass-gradient: repeating-linear-gradient(
   rgba(179, 103, 0, 0.1) 25%
 );
 
-$copper-gradient: linear-gradient(
-  122deg,
-  rgb(208, 152, 117) 0%,
-  rgb(193, 109, 62) 20%,
-  rgb(129, 57, 19) 40%,
-  rgb(202, 114, 66) 54%,
-  rgb(231, 179, 130) 65%,
-  rgb(165, 100, 62) 85%,
-  rgb(122, 57, 25) 100%
+$dodecagonSide: 51.76px;
+
+$copper: rgb(127, 87, 79);
+
+$copper-linear-gradient: linear-gradient(
+  108deg,
+  rgba(127, 87, 79, 1) 0%,
+  rgba(136, 136, 136, 1) 15%,
+  rgba(110, 70, 50, 1) 25%,
+  rgba(156, 94, 42, 1) 35%,
+  rgba(76, 26, 10, 1) 60%,
+  rgba(98, 72, 60, 1) 75%,
+  rgba(75, 26, 0, 1) 100%
 );
 
-$dodecagonSide: 51.76px;
+$copper-linear-gradient-2: linear-gradient(
+  121deg,
+  rgba(127, 87, 79, 1) 0%,
+  rgba(136, 136, 136, 1) 10%,
+  rgba(110, 70, 50, 1) 20%,
+  rgba(156, 94, 42, 1) 30%,
+  rgba(76, 26, 10, 1) 50%,
+  rgb(94, 55, 23) 65%,
+  rgba(98, 72, 60, 1) 75%,
+  rgba(75, 26, 0, 1) 100%
+);

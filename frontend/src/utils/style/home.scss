@@ -1,36 +1,6 @@
 @import './variables';
 @import './mixins';
 
-.timeScroller {
-  --yearScrollY: 200px;
-}
-
-.timeScroller {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 50px;
-  width: 20px;
-  height: 600px;
-  z-index: 200;
-  & > input {
-    position: absolute;
-    top: 60%;
-    border: 1px solid red;
-    height: 20px;
-    transform: rotate(90deg);
-    background-color: blue;
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-    width: 75vh;
-    &::-webkit-slider-runnable-track {
-      background: white;
-    }
-  }
-}
-
 .arm {
   border: 1px solid red;
   position: absolute;
@@ -42,9 +12,7 @@
 
 #firstPlan {
   animation: showElement 1s 0.3s ease-in-out forwards;
-  & > * {
-    box-shadow: 0px 20px 50px rgba(black, 0.7);
-  }
+  cursor: pointer;
 }
 
 @keyframes showElement {
@@ -57,12 +25,12 @@
   }
   60% {
     z-index: 3;
-    transform: rotateX(0deg) translate3d(13px, 20px, 135px);
+    transform: translate3d(13px, 20px, 135px);
   }
 
   100% {
     z-index: 3;
-    transform: rotateX(0deg) translate3d(135px, 50px, 500px);
+    transform: translate3d(150px, 125px, 500px);
   }
 }
 #backPlan {
@@ -72,12 +40,11 @@
 @keyframes stockElement {
   0% {
     z-index: 4;
-    transform: rotateX(0deg) translateZ(500px) translateX(130px)
-      translateY(50px);
+    transform: translate3d(150px, 125px, 500px);
   }
   40% {
     z-index: 4;
-    transform: rotateX(0deg) translateZ(135px) translateX(13px) translateY(20px);
+    transform: translateZ(135px) translateX(13px) translateY(20px);
   }
   60% {
     transform: rotateX(87deg) translateZ(-65px) translateX(13px)
@@ -96,6 +63,9 @@
   0% {
     z-index: 0;
   }
+  50% {
+    z-index: 0;
+  }
   100% {
     z-index: 3;
   }
@@ -109,13 +79,17 @@
   0% {
     z-index: 3;
   }
+  40% {
+    z-index: 3;
+  }
   100% {
     z-index: 0;
   }
 }
 
 .moveBack {
-  transform: translateZ(-200px) translateX(-15%);
+  transform: translateZ(-200px) translateX(-20%);
+  box-shadow: inset 0 0 200px 100px black;
   opacity: 0;
 }
 
@@ -123,46 +97,22 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 1000px;
   height: 600px;
   perspective: 1000px;
 }
 
 .leftBox {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 25%;
-  min-width: 220px;
-  height: 95%;
-  transform-style: preserve-3d;
+  @include colBox;
   &__background {
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    background: black;
-    transform: translateZ(-500px) translateX(-64%);
+    transform: translateZ(-500px) translateX(-45%);
   }
   &__cv {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(82, 50, 8);
-    transition: all 0.5s ease-in-out;
-    transform: translateZ(-200px) translateX(-15%);
-    opacity: 0;
-    & > * {
-      width: 190px;
-      margin: 10px auto;
-    }
-    &__exp {
+    transform: translateZ(-200px) translateX(-25%);
+
+    &__experience {
       @include category;
       &__content {
-        height: 150px;
         &--0 {
           width: 100%;
           height: 100px;
@@ -181,10 +131,9 @@
         }
       }
     }
-    &__edu {
+    &__education {
       @include category;
       &__content {
-        height: 300px;
         &--0 {
           width: 100%;
           height: 100px;
@@ -229,18 +178,7 @@
     }
   }
   &__identity {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    padding: 10px auto;
-    width: 220px;
-    height: 100%;
-    background: $copper-gradient;
-    transition: all 0.5s ease-in-out;
-    transform: translateZ(-200px) translateX(-15%);
-    opacity: 0;
+    transform: translateZ(-200px) translateX(-25%);
     &__picture {
       width: 175px;
       height: 175px;
@@ -257,9 +195,8 @@
 .middleBox {
   display: flex;
   align-items: center;
-  width: 50%;
-  min-width: 400px;
-  height: 95%;
+  width: 40%;
+  height: 100%;
   transform-style: preserve-3d;
   z-index: 1;
   &__middleCol {
@@ -280,6 +217,7 @@
       height: 250px;
       border-radius: 45px;
       // transform: translate3d(0, 100px, 400px);
+      transition: all 0.5s ease-in-out;
       z-index: 0;
       &__border {
         position: absolute;
@@ -320,7 +258,7 @@
       height: 200px;
       border-radius: 100px;
       overflow: hidden;
-      box-shadow: 0 0 5px 4px black;
+      box-shadow: 0 0 5px 4px rgb(51, 45, 36);
       &::after {
         content: '';
         position: absolute;
@@ -350,61 +288,44 @@
         }
       }
     }
-    &__btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-width: 350px;
-      height: 50px;
-      background: $copper-gradient;
-      & button {
-        width: 100px;
-        height: 25px;
-      }
-    }
   }
 }
 
 .rightBox {
-  display: flex;
-  align-items: center;
-  width: 25%;
-  min-width: 220px;
-  height: 95%;
-  transform-style: preserve-3d;
-  background: black;
-  &__rightCol {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;
-    width: 200px;
-    color: #70ffc3;
-    font-family: 'retro-computer';
-    font-size: 12px;
-    & > * {
-      width: 190px;
-      margin: 10px auto;
-    }
+  @include colBox;
+  &__background {
+    transform: translateZ(-500px) translateX(48%);
+  }
+  &__cv {
+    transform: translateZ(-200px) translateX(31%);
     &__skill {
       display: flex;
       flex-direction: column;
       align-items: center;
-
+      width: 100%;
+      height: 100%;
+      background: $copper-linear-gradient-2;
+      transition: all 0.5s ease-in-out;
+      box-shadow: inset 0 0 15px 5px black;
+      // transform: translateZ(-200px) translateX(-25%);
+      // opacity: 0;
       &__title {
         @include rack-title;
       }
       &__content {
-        @include border-ridge;
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 200px;
-        height: 500px;
-        background: black;
-        box-shadow: 0 0 15px 1px black;
+        font-size: 21px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        background: $copper-linear-gradient-2;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-shadow: -0.5px -0.5px rgba(0, 0, 0, 0.9);
+        filter: brightness(200%);
         & > * {
           display: flex;
           flex-direction: column;
@@ -415,10 +336,13 @@
       }
     }
   }
+  &__identity {
+    transform: translateZ(-200px) translateX(31%);
+  }
 }
 
 .moveForward {
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(5px, 0, 0);
   opacity: 1;
 }
 
