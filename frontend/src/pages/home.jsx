@@ -70,17 +70,30 @@ export default function Cv() {
           }
         }
         return (
-          <div className="board" key={index}>
-            <div className="leftBox">
-              <LeftCol cv={cv} index={index} />
+          <>
+            <div className="" key={index}>
+              <div className=""></div>
+              <div className=""></div>
+              <div className=""></div>
             </div>
-            <div className="middleBox">
-              <MiddleCol cv={cv} />
+            <div className="board" key={index}>
+              <div className="leftBox">
+                <LeftCol cv={cv} index={index} />
+              </div>
+              <div className="middleBox">
+                <MiddleCol cv={cv} />
+              </div>
+              <div className="rightBox">
+                <RightCol cv={cv} />
+              </div>
             </div>
-            <div className="rightBox">
-              <RightCol cv={cv} />
+
+            <div className="" key={index}>
+              <div className=""></div>
+              <div className=""></div>
+              <div className=""></div>
             </div>
-          </div>
+          </>
         )
       })}
     </>

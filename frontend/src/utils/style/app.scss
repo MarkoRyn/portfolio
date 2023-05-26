@@ -35,8 +35,15 @@ button {
   display: flex;
   justify-content: center;
   top: 100px;
-  width: 100vw;
+  width: 240vw;
   overflow: hidden;
+
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+  }
 }
 
 div:visited {
