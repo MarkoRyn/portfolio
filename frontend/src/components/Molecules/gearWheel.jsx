@@ -4,52 +4,64 @@ import { Cylinder, Cube, Cover } from '../Atoms/GearWheelPieces'
 
 export const GearWheel = ({
   className,
-  cogs,
-  size,
+  id,
   style,
-  polygonSide,
-  angle,
+  wheelSettings,
+  rotateDirection,
+  speed,
+  animationPaused,
 }) => {
-  const wheelBoxClass = `${className}__wheelBox`
-  console.log(cogs)
-  console.log(angle)
   const wheelCogs = []
-  for (let i = 0; i < cogs; i++) {
+  const translate3d = {
+    tx: `${wheelSettings.cogs * 1.35 - 28.5}%`,
+    ty: '37.5%',
+    tz: '0',
+  }
+  for (let i = 0; i < wheelSettings.cogs; i++) {
     wheelCogs.push(
       <>
         <Cube
-          className={wheelBoxClass}
+          className={`${className}__wheelBox`}
           index={i}
           style={{
             transform: `rotateZ(${
-              i * angle * 2
-            }deg) translate3d(-15%, 37.5%, 0)`,
+              i * wheelSettings.angle * 2
+            }deg) translate3d(${translate3d.tx}, ${translate3d.ty}, ${
+              translate3d.tz
+            })`,
           }}
-          cubeSide={polygonSide}
-          cogs={cogs}
+          cubeSide={wheelSettings.polygonSide}
+          cogs={wheelSettings.cogs}
         />
         <Cover
-          className={wheelBoxClass}
+          className={`${className}__wheelBox`}
           index={i}
           style={{
             transform: `rotateZ(${
-              i * angle * 2 - angle
-            }deg) translate3d(-15%, 37.5%, 0)`,
+              i * wheelSettings.angle * 2 - wheelSettings.angle
+            }deg) translate3d(${translate3d.tx}, ${translate3d.ty}, ${
+              translate3d.tz
+            })`,
           }}
-          coverSide={polygonSide}
-          cogs={cogs}
+          coverSide={wheelSettings.polygonSide}
+          cogs={wheelSettings.cogs}
         />
       </>
     )
   }
-  console.log(wheelCogs)
   return (
-    <div className={className} style={style}>
-      <div className={wheelBoxClass}>
+    <div className={className} style={wheelSettings.style} id={id}>
+      <div
+        className={`${className}__wheelBox test`}
+        style={{
+          animation: `rotate-${rotateDirection} ${speed}s infinite linear`,
+          animationPlayState: animationPaused ? 'paused' : 'running',
+        }}
+      >
         <Cylinder
-          className={wheelBoxClass}
-          size={size}
-          polygonSide={polygonSide}
+          className={`${className}__wheelBox`}
+          size={wheelSettings.size}
+          polygonSide={wheelSettings.polygonSide}
         />
         {wheelCogs}
       </div>

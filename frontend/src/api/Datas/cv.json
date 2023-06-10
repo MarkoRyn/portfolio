@@ -1,6 +1,15 @@
 [{
   "experience":[
-   {
+    {
+      "titleId": "expDevelopper",
+      "title": "Développeur logiciel",
+      "company": "Ampère",
+      "location": "Bregnier Cordon (38)",
+      "employmentType": "CDD",
+      "startDate": "Mai 2023",
+      "endDate": "Aujourd'hui"
+    },
+    {
     "titleId": "expTechnician",
     "title": "Technicien de laboratoire",
     "company": "Lafarge",

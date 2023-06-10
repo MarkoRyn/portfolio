@@ -4,12 +4,11 @@
   &__wheelBox {
     width: 100%;
     height: 100%;
-    top: 150px;
+    top: 100px;
     position: relative;
     transform-style: preserve-3d;
-    animation: spin 5s infinite linear;
-    // animation: rotate 5s infinite linear;
-    transform: rotateY(-50deg) rotateX(20deg);
+    // animation: spin 5s infinite linear;
+    // transform: rotateY(-50deg) rotateX(20deg);
     @include cube;
     &__cylinder {
       width: 100%;
@@ -28,12 +27,49 @@
   }
 }
 
-@keyframes rotate {
+#gearWheel {
+  &--1 {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    transform: rotateZ(30deg);
+  }
+  &--2 {
+    position: absolute;
+    top: 160px;
+    left: -50px;
+  }
+  &--3 {
+    position: absolute;
+    top: 235px;
+    left: 45px;
+  }
+}
+
+.rotate {
+  &__left {
+    animation: rotate-left 5s infinite linear;
+  }
+  &__right {
+    animation: rotate-right 5s infinite linear;
+  }
+}
+
+@keyframes rotate-left {
   from {
     transform: rotateZ(0deg);
   }
   to {
     transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-right {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(-360deg);
   }
 }
 

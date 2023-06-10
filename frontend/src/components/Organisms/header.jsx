@@ -46,7 +46,7 @@ export default function Header() {
             <button onClick={handleCvClick}>CV</button>
             <button onClick={handleIdClick}>Identité</button>
             <Link to="/test">
-              <button onClick={handleTestClick}>Tests</button>
+              <button onClick={handleTestClick}>GearWheels</button>
             </Link>
           </div>
         </nav>

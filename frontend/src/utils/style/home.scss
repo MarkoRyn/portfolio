@@ -129,6 +129,14 @@
           transition: all 0.5s ease-in-out;
           transform: rotateX(89deg) translateZ(-113px) translateX(13px);
         }
+        &--2 {
+          width: 100%;
+          height: 100px;
+          position: absolute;
+          transform-style: preserve-3d;
+          transition: all 0.5s ease-in-out;
+          transform: rotateX(89deg) translateZ(-160px) translateX(13px);
+        }
       }
     }
     &__education {

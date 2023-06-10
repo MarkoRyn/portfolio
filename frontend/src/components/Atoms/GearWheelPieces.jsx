@@ -1,5 +1,4 @@
 export const Cylinder = ({ className, style, size, polygonSide }) => {
-  console.log(polygonSide)
   return (
     <div className={`${className}__cylinder`} style={style}>
       <div
@@ -88,7 +87,6 @@ export const Cube = ({ className, index, style, cubeSide, cogs }) => {
 }
 
 export const Cover = ({ className, index, style, coverSide, cogs }) => {
-  console.log((cogs - 6) * 1.25)
   return (
     <div className={`${className}__cube cover-${index}`} style={style}>
       <div
