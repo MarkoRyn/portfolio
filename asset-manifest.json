@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.334f4a69.css",
-    "main.js": "/portfolio/static/js/main.51f43264.js",
+    "main.css": "/portfolio/static/css/main.8431edff.css",
+    "main.js": "/portfolio/static/js/main.682dfabc.js",
     "static/media/IronManOfWar-regular.ttf": "/portfolio/static/media/IronManOfWar-regular.ef7cb5ef6e29c5662656.ttf",
     "static/media/IronManOfWar-black.ttf": "/portfolio/static/media/IronManOfWar-black.6cefc405f967fcf3155e.ttf",
     "static/media/MRa-1.png": "/portfolio/static/media/MRa-1.9ce2923f78cc962d15bc.png",
@@ -14,11 +14,11 @@
     "static/media/steampunk-flyer.ttf": "/portfolio/static/media/steampunk-flyer.3f720aefb363e3ed8844.ttf",
     "static/media/retro-computer.ttf": "/portfolio/static/media/retro-computer.d3aa5fc07030eb5f05a3.ttf",
     "index.html": "/portfolio/index.html",
-    "main.334f4a69.css.map": "/portfolio/static/css/main.334f4a69.css.map",
-    "main.51f43264.js.map": "/portfolio/static/js/main.51f43264.js.map"
+    "main.8431edff.css.map": "/portfolio/static/css/main.8431edff.css.map",
+    "main.682dfabc.js.map": "/portfolio/static/js/main.682dfabc.js.map"
   },
   "entrypoints": [
-    "static/css/main.334f4a69.css",
-    "static/js/main.51f43264.js"
+    "static/css/main.8431edff.css",
+    "static/js/main.682dfabc.js"
   ]
 }
