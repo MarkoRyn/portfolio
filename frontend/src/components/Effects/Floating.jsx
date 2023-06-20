@@ -28,7 +28,7 @@ export const Floating = ({ children, elementClass, category }) => {
         for (let i = 0; i <= 10; i++) {
           y[i] = getRandom(0 - containerH / 5, containerH)
           x[i] = getRandom(0 - containerW / 3, containerW)
-          z[i] = z[i - 1] === 0 ? getRandom(-1000, 0) : 0
+          z[i] = z[i - 1] === -100 ? getRandom(-1000, -100) : -100
           brightness[i] = (z[i] + 1000) / 1000
           zIndex[i] = Math.round(z[i])
           blur[i] = z[i] / -200
@@ -49,7 +49,7 @@ export const Floating = ({ children, elementClass, category }) => {
             // playFart.play()
             floatElement.style.setProperty(
               `--brightness${i}`,
-              `brightness(1) blur(0)`
+              `brightness(1) blur(0px)`
             )
           })
           floatElement.addEventListener('mouseout', () => {

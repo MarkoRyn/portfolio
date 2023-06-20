@@ -88,9 +88,56 @@
 }
 
 .moveBack {
-  transform: translateZ(-200px) translateX(-20%);
-  box-shadow: inset 0 0 200px 100px black;
-  opacity: 0;
+  animation: moveBack 1s forwards;
+}
+
+@keyframes moveBack {
+  0% {
+    transform: translate3d(5px, 0, 0);
+    opacity: 1;
+    @media screen and (max-width: 1024px) {
+      transform: translate3d(1px, 0, 0) scale(0.89);
+    }
+  }
+  60% {
+    transform: translate3d(5px, 0px, -200px);
+    opacity: 0.8;
+    box-shadow: inset 0 0 100px 50px black;
+    @media screen and (max-width: 1024px) {
+      transform: translate3d(-20px, 0, -200px) scale(0.89);
+    }
+  }
+  100% {
+    transform: translate3d(-30px, -500px, -200px);
+    box-shadow: inset 0 0 200px 100px black;
+    opacity: 0;
+  }
+}
+
+.moveForward {
+  animation: moveForward 1s forwards;
+}
+
+@keyframes moveForward {
+  0% {
+    transform: translate3d(-30px, -500px, -200px);
+    box-shadow: inset 0 0 200px 100px black;
+    opacity: 0;
+  }
+  40% {
+    transform: translate3d(-30px, 0px, -200px);
+    opacity: 1;
+    @media screen and (max-width: 1024px) {
+      transform: translate3d(20px, 0, -200px) scale(0.89);
+    }
+  }
+  100% {
+    transform: translate3d(0, 0px, 0);
+    opacity: 1;
+    @media screen and (max-width: 1024px) {
+      transform: translate3d(1px, 0, 0) scale(0.89);
+    }
+  }
 }
 
 .board {
@@ -100,12 +147,22 @@
   width: 1000px;
   height: 600px;
   perspective: 1000px;
+  @media screen and (max-width: 1024px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
 }
 
 .leftBox {
+  @media screen and (max-width: 1024px) {
+    order: 2;
+  }
   @include colBox;
   &__background {
-    transform: translateZ(-500px) translateX(-45%);
+    transform: translate3d(-210px, 0px, -600px);
+    width: 135%;
+    height: 140%;
   }
   &__cv {
     transform: translateZ(-200px) translateX(-25%);
@@ -201,29 +258,45 @@
 }
 
 .middleBox {
+  @media screen and (max-width: 1024px) {
+    order: 1;
+    width: 100%;
+  }
   display: flex;
   align-items: center;
   width: 40%;
   height: 100%;
   transform-style: preserve-3d;
-  z-index: 1;
+  z-index: 0;
   &__middleCol {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
     position: relative;
     transform-style: preserve-3d;
+    &__top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 15%;
+      background: url(../images/frame-metallic-800x180.jpg);
+      background-size: contain;
+      box-shadow: 0px 0px 5px 1px black;
+    }
     &__screen {
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
-      width: 375px;
-      height: 250px;
-      border-radius: 45px;
+      width: 100%;
+      height: 50%;
+      background: url(../images/frame-metallic-800x600.png);
+      background-size: contain;
+      box-shadow: 0px 0px 5px 1px black;
       // transform: translate3d(0, 100px, 400px);
       transition: all 0.5s ease-in-out;
       z-index: 0;
@@ -240,6 +313,7 @@
         position: absolute;
         width: 330px;
         height: 200px;
+        overflow: hidden;
         &__text {
           position: absolute;
           width: 100%;
@@ -248,7 +322,8 @@
           padding: 20px;
           font-family: 'retro-gaming';
           color: #70ffc3;
-          font-size: 14px;
+          font-size: 0.6em;
+          text-align: center;
         }
         &__background {
           position: absolute;
@@ -258,41 +333,80 @@
         }
       }
     }
-
-    &__porthole {
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
       position: relative;
-      background: black;
-      width: 200px;
-      height: 200px;
-      border-radius: 100px;
-      overflow: hidden;
-      box-shadow: 0 0 5px 4px rgb(51, 45, 36);
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 200px;
-        height: 200px;
-        border-radius: 100px;
-        box-shadow: inset 7px -7px 100px 0px rgba($color-copper, 0.4);
-      }
-      &__mask {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 200px;
-        height: 200px;
-        border-radius: 100px;
-        box-shadow: inset 7px -7px 30px 3px white;
-        z-index: 1;
-        &::after {
-          content: '';
-          position: absolute;
-          width: 200px;
-          height: 200px;
+      width: 100%;
+      height: 35%;
+      &__left {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        width: 60%;
+        height: 100%;
+        background: url(../images/frame-metallic-480x420.png);
+        background-size: contain;
+        box-shadow: 0px 2px 5px black inset;
+        &__porthole {
+          @media screen and (max-width: 1024px) {
+            display: none;
+          }
+          display: flex;
+          align-self: center;
+          position: relative;
+          background: black;
+          width: 150px;
+          height: 150px;
           border-radius: 100px;
-          box-shadow: inset 0px 0px 15px 3px white;
+          overflow: hidden;
+          box-shadow: 0 0 5px 4px rgb(51, 45, 36);
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            box-shadow: inset 7px -7px 100px 0px rgba($color-copper, 0.4);
+            filter: blur(10px);
+          }
+          &__mask {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            box-shadow: inset -10px -20px 50px 2px white;
+            opacity: 0.8;
+            filter: blur(10px);
+            z-index: 1;
+            &::after {
+              content: '';
+              position: absolute;
+              width: 150px;
+              height: 150px;
+              border-radius: 100px;
+              box-shadow: inset 0px 0px 15px 2px white;
+            }
+          }
+        }
+      }
+
+      &__empty {
+        width: 40%;
+        perspective: 1000px;
+        background: black;
+        position: relative;
+        overflow: hidden;
+        &__shadow {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow: inset 0 0 100px 10px black;
         }
       }
     }
@@ -300,9 +414,14 @@
 }
 
 .rightBox {
+  @media screen and (max-width: 1024px) {
+    order: 3;
+  }
   @include colBox;
   &__background {
-    transform: translateZ(-500px) translateX(48%);
+    transform: translate3d(210px, 0px, -600px);
+    width: 135%;
+    height: 140%;
   }
   &__cv {
     transform: translateZ(-200px) translateX(31%);
@@ -326,7 +445,7 @@
         flex-direction: column;
         justify-content: space-between;
         width: 200px;
-        font-size: 21px;
+        font-size: 1.22em;
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         background: $copper-linear-gradient-2;
         background-clip: text;
@@ -347,11 +466,6 @@
   &__identity {
     transform: translateZ(-200px) translateX(31%);
   }
-}
-
-.moveForward {
-  transform: translate3d(5px, 0, 0);
-  opacity: 1;
 }
 
 .floating {

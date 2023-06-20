@@ -4,7 +4,6 @@
   &__wheelBox {
     width: 100%;
     height: 100%;
-    top: 100px;
     position: relative;
     transform-style: preserve-3d;
     // animation: spin 5s infinite linear;
@@ -15,13 +14,12 @@
       height: 100%;
       position: absolute;
       transform-style: preserve-3d;
+      // background-size: contain;
       z-index: 1;
       & > * {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgb(102, 71, 13);
-        outline: solid;
       }
     }
   }
@@ -30,9 +28,9 @@
 #gearWheel {
   &--1 {
     position: absolute;
-    top: 5px;
-    left: 10px;
-    transform: rotateZ(30deg);
+    top: 10px;
+    left: 5px;
+    // transform: rotateZ(30deg);
   }
   &--2 {
     position: absolute;
@@ -41,8 +39,15 @@
   }
   &--3 {
     position: absolute;
-    top: 235px;
-    left: 45px;
+    top: 240px;
+    left: 50px;
+  }
+  &--4 {
+    // color: #6e4d2f;
+    transform: translateZ(-300px);
+    position: absolute;
+    top: -60px;
+    left: -40px;
   }
 }
 

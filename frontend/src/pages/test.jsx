@@ -1,33 +1,11 @@
 import { useState } from 'react'
 
 import { GearWheel } from '../components/Molecules/gearWheel'
+import bgImage from '../utils/images/gearwheel-1.png'
 
 export default function Test() {
   const [animationPaused, setAnimationPaused] = useState(false)
   const [rotateDirection, setRotateDirection] = useState(false)
-
-  const wheelSettings = (cogs, wheelSize) => {
-    const radius = wheelSize / 2
-    const angleDegree = 360 / (cogs * 2)
-    const angleRadian = (angleDegree * Math.PI) / 180
-    const polygonSide = Math.sqrt(
-      Math.pow(radius, 2) +
-        Math.pow(radius, 2) -
-        2 * radius * radius * Math.cos(angleRadian)
-    )
-
-    return {
-      cogs: cogs,
-      size: wheelSize,
-      polygonSide: polygonSide * 1,
-      angle: angleDegree,
-      style: {
-        width: `${wheelSize}px`,
-        height: `${wheelSize}px`,
-        marginTop: `${polygonSide}px`,
-      },
-    }
-  }
 
   const handleAnimationToggle = () => {
     setAnimationPaused(!animationPaused)
@@ -37,34 +15,52 @@ export default function Test() {
     setRotateDirection(!rotateDirection)
   }
 
+  const sideStyle = {
+    cube: {
+      background: '#381a00',
+      border: '1px solid rgb(0, 0, 0)',
+    },
+    cylinder: {
+      background: `url(${bgImage})`,
+      backgroundSize: 'contain',
+      border: '1px solid #381a00',
+      // outline: 'solid rgb(76, 26, 10)',
+    },
+  }
+
   return (
-    <>
-      <GearWheel
-        className={'gearWheel'}
-        id={'gearWheel--1'}
-        wheelSettings={wheelSettings(12, 150)}
-        rotateDirection={rotateDirection ? 'left' : 'right'}
-        speed={3}
-        animationPaused={animationPaused}
-      />
-      <GearWheel
-        className={'gearWheel'}
-        id={'gearWheel--2'}
-        wheelSettings={wheelSettings(8, 100)}
-        rotateDirection={rotateDirection ? 'right' : 'left'}
-        speed={2}
-        animationPaused={animationPaused}
-      />
-      <GearWheel
-        className={'gearWheel'}
-        id={'gearWheel--3'}
-        wheelSettings={wheelSettings(8, 100)}
-        rotateDirection={rotateDirection ? 'left' : 'right'}
-        speed={2}
-        animationPaused={animationPaused}
-      />
+    <div style={{ marginTop: '100px' }}>
+      <div style={{ position: 'relative', top: '100px' }}>
+        <GearWheel
+          className={'gearWheel'}
+          id={'gearWheel--1'}
+          wheelSettings={{ cogs: 12, wheelSize: 150 }}
+          rotateDirection={rotateDirection ? 'left' : 'right'}
+          speed={3}
+          animationPaused={animationPaused}
+          sideStyle={sideStyle}
+        />
+        <GearWheel
+          className={'gearWheel'}
+          id={'gearWheel--2'}
+          wheelSettings={{ cogs: 8, wheelSize: 100 }}
+          rotateDirection={rotateDirection ? 'right' : 'left'}
+          speed={2}
+          animationPaused={animationPaused}
+          sideStyle={sideStyle}
+        />
+        <GearWheel
+          className={'gearWheel'}
+          id={'gearWheel--3'}
+          wheelSettings={{ cogs: 8, wheelSize: 80 }}
+          rotateDirection={rotateDirection ? 'left' : 'right'}
+          speed={2}
+          animationPaused={animationPaused}
+          sideStyle={sideStyle}
+        />
+      </div>
       <button onClick={handleAnimationToggle}>Pause</button>
       <button onClick={handleChangeDirection}>Changer de sens</button>
-    </>
+    </div>
   )
 }

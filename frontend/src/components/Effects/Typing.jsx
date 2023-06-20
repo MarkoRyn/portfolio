@@ -14,11 +14,11 @@ export const Typing = ({ className, text }) => {
             typeWriter(text, index + 1)
           }
         }
-      }, 50)
+      }, 35)
     }
     setTimeout(() => {
       typeWriter(text, 0)
-    }, 60)
+    }, 40)
   }, [text, descContent])
 
   return <div className={className}></div>
