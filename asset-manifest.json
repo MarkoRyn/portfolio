@@ -1,24 +1,29 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.8431edff.css",
-    "main.js": "/portfolio/static/js/main.682dfabc.js",
+    "main.css": "/portfolio/static/css/main.ee43046e.css",
+    "main.js": "/portfolio/static/js/main.3d62d3ca.js",
     "static/media/IronManOfWar-regular.ttf": "/portfolio/static/media/IronManOfWar-regular.ef7cb5ef6e29c5662656.ttf",
     "static/media/IronManOfWar-black.ttf": "/portfolio/static/media/IronManOfWar-black.6cefc405f967fcf3155e.ttf",
     "static/media/MRa-1.png": "/portfolio/static/media/MRa-1.9ce2923f78cc962d15bc.png",
     "static/media/pipe-straight-2.svg": "/portfolio/static/media/pipe-straight-2.724e5312c695be1472a6.svg",
+    "static/media/frame-metallic-1.png": "/portfolio/static/media/frame-metallic-1.29a43d80883e9ea2efd0.png",
+    "static/media/frame-metallic-800x600.png": "/portfolio/static/media/frame-metallic-800x600.2137a9f3ae16a7cfed2f.png",
+    "static/media/frame-metallic-480x420.png": "/portfolio/static/media/frame-metallic-480x420.c2275ab098a591b1ae3f.png",
     "static/media/pipe-screen.png": "/portfolio/static/media/pipe-screen.064f646fbbb5b3baf8f6.png",
     "static/media/old-wood-600x600.jpg": "/portfolio/static/media/old-wood-600x600.480f25d763d0f31b5b55.jpg",
     "static/media/DancingScript-Regular.ttf": "/portfolio/static/media/DancingScript-Regular.5bfc0dcc0c0ff5a2832e.ttf",
     "static/media/rack.svg": "/portfolio/static/media/rack.e86b94107140aca19b64.svg",
+    "static/media/frame-metallic-800x180.jpg": "/portfolio/static/media/frame-metallic-800x180.40c5615039de2e029abf.jpg",
     "static/media/retro-gaming.ttf": "/portfolio/static/media/retro-gaming.c1a52a602585b2d6baf8.ttf",
+    "static/media/frame-metallic-1000x80.jpg": "/portfolio/static/media/frame-metallic-1000x80.de2e0652131ccb9dd752.jpg",
     "static/media/steampunk-flyer.ttf": "/portfolio/static/media/steampunk-flyer.3f720aefb363e3ed8844.ttf",
     "static/media/retro-computer.ttf": "/portfolio/static/media/retro-computer.d3aa5fc07030eb5f05a3.ttf",
     "index.html": "/portfolio/index.html",
-    "main.8431edff.css.map": "/portfolio/static/css/main.8431edff.css.map",
-    "main.682dfabc.js.map": "/portfolio/static/js/main.682dfabc.js.map"
+    "main.ee43046e.css.map": "/portfolio/static/css/main.ee43046e.css.map",
+    "main.3d62d3ca.js.map": "/portfolio/static/js/main.3d62d3ca.js.map"
   },
   "entrypoints": [
-    "static/css/main.8431edff.css",
-    "static/js/main.682dfabc.js"
+    "static/css/main.ee43046e.css",
+    "static/js/main.3d62d3ca.js"
   ]
 }
