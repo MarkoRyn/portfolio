@@ -271,3 +271,18 @@
   position: absolute;
   background: linear-gradient(0deg, rgb(102, 71, 13), black);
 }
+
+@mixin showElement_start {  
+}
+
+@mixin showElement_mid-1 {
+    transform: rotateX(87deg) translate3d(-10%,200%, -65px);
+}
+
+@mixin showElement_mid-2 {  
+    transform: translate3d(0%, 10%, 135px);
+}
+
+@mixin showElement_end {  
+    transform: translate3d(66%, 50%, 500px);
+}

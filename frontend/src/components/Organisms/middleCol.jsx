@@ -72,7 +72,7 @@ export const MiddleCol = ({ cv }) => {
       </div>
       <div className="middleBox__middleCol__bottom">
         <div className="middleBox__middleCol__bottom__left">
-          <div className="middleBox__middleCol__bottom__left__porthole">
+          {/* <div className="middleBox__middleCol__bottom__left__porthole">
             <div className="floating__skill">
               <Floating category="softSkill">
                 <li className="floating__skill__softSkill">
@@ -89,7 +89,7 @@ export const MiddleCol = ({ cv }) => {
               </Floating>
             </div>
             <div className="middleBox__middleCol__bottom__left__porthole__mask"></div>
-          </div>
+          </div> */}
         </div>
         <div className="middleBox__middleCol__bottom__empty">
           <EmptyCase
