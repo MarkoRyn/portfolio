@@ -30,7 +30,7 @@
 
   100% {
     z-index: 3;
-    transform: translate3d(150px, 125px, 500px);
+    transform: translate3d(135px, 80px, 500px);
   }
 }
 #backPlan {
@@ -40,15 +40,14 @@
 @keyframes stockElement {
   0% {
     z-index: 4;
-    transform: translate3d(150px, 125px, 500px);
+    transform: translate3d(135px, 80px, 500px);
   }
   40% {
     z-index: 4;
-    transform: translateZ(135px) translateX(13px) translateY(20px);
+    transform: translate3d(13px, 20px, 135px);
   }
   60% {
-    transform: rotateX(87deg) translateZ(-65px) translateX(13px)
-      translateY(300px);
+    transform: rotateX(87deg) translate3d(13px, 300px, -65px);
   }
 
   100% {
